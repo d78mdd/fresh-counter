@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>queued</title>
+	
+	<div id="p1">Thank you, you have been queued</div>
+	
+	<div id="p2">...</div>
+
+    <style>
+
+    </style>
+  </head>
+  
+  
+  <body>
+  		
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	
+
+	
+	
+	<script>
+	$(function () {
+		
+		var socket = io();
+		
+		var greet = "You are currently user number " ;
+
+		socket.emit('user scans');
+		
+		
+		
+		var getUrlParameter = function getUrlParameter(sParam) {
+			var sPageURL = window.location.search.substring(1),
+				sURLVariables = sPageURL.split('&'),
+				sParameterName,
+				i;
+			for (i = 0; i < sURLVariables.length; i++) {
+				sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+				}
+			};
+		};
+		// decoding URL params
+		// https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+		
+		
+		
+		var id = getUrlParameter('id');
+
+		console.log('page -user-: id = ' + id)
+		$('#p2').text(greet+id);
+		
+		
+	});
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </body>
+</html>
+
+
+
+
+

@@ -17,19 +17,21 @@
 	<script src="/qrcode.js"></script>
 	
 	<div id="qrcode"></div>
-	<script>
-		qrcode = new QRCode(document.getElementById("qrcode"), "five");
-	</script>
 
+	
 	
 	<script>
 	$(function () {
 		var socket = io();
 
-		//socket.emit('user scan');
+		
+		socket.emit('user scans');
+		// send an initial dummy signal to get the IP settings
 		
 		
-		var link = "http://localhost:3000/user?id=";
+		//var link = "http://localhost:3000/user?id=";
+		
+		qrcode = new QRCode(document.getElementById("qrcode"), "dummy"); // first ID would always be 1
 
 		socket.on('reset code', function(msg){
 			qrcode.clear();
@@ -38,9 +40,9 @@
 			
 			//qrcode.makeCode(Date());
 			
-			var id = msg;
+			var link = msg;
 			
-			qrcode.makeCode(link+id);
+			qrcode.makeCode(link);
 		});
 
 	});

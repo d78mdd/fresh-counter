@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome</title>
+		
+    <style>
+
+    </style>
+  </head>
+  
+  
+  <body>
+  		
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="/qrcode.js"></script>
+	
+	<div id="qrcode"></div>
+	<script>
+		qrcode = new QRCode(document.getElementById("qrcode"), "five");
+	</script>
+
+	
+	<script>
+	$(function () {
+		var socket = io();
+
+		//socket.emit('user scan');
+		
+		
+		var link = "http://localhost:3000/user?id=";
+
+		socket.on('reset code', function(msg){
+			qrcode.clear();
+
+
+			
+			//qrcode.makeCode(Date());
+			
+			var id = msg;
+			
+			qrcode.makeCode(link+id);
+		});
+
+	});
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </body>
+</html>
+
+
+
+
+

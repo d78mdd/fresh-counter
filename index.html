@@ -1,26 +1,35 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Welcome</title>
+<head>
+	<title>Welcome</title>
 		
-    <style>
-	 * { font: 30px Helvetica, Arial; text-align: center;}
-	
-	#div {
-	position: relative;
-	top: 0px;
-	left: 0px;
-	}
-    </style>
-  </head>
-  
-  
-  <body>		
+	<style>
+
+		h2 {
+			font-family: "Times New Roman", Times, serif;
+			font-size: 40px;
+			color:blue;
+			text-align: center;
+		}
+
+		p {
+			font-family: "Times New Roman", Times, serif;
+			font-size: 20px;
+			text-align: center;
+		}
+		
+	</style>
+
+</head>
+
+
+<body>		
 	
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="/qrcode.js"></script>
 	
+
 	
 	<script>	
 	$(function () {
@@ -31,19 +40,26 @@
 		socket.emit('user scans');
 		
 		
-		socket.on('reset code', function(msg){
-			
-			var link = msg;		
-			
+		socket.on('reset code', function(link){
+						
 			//wait a few seconds / delay the showing of the new code
 			setTimeout(function(){      //https://stackoverflow.com/questions/1836105/how-to-wait-5-seconds-with-jquery			
 				
 				// dynamically re-create the div element
-				var $newdiv1 = $( "<div id='qrcode'></div>" );
+				var $newdiv1 = $( "<div id='qrcode' ></div>" );
 				$( "body" ).append( $newdiv1 );
+				
 				
 				// generate a code
 				qrcode = new QRCode(document.getElementById("qrcode"), link);
+
+				// set/adjust/put in the middle of the screen/view area  assuming a 256px image size
+				//  center horizontally
+				document.getElementById("qrcode").style.margin="0 auto";
+				document.getElementById("qrcode").style.width="256px";
+				//  how about vertically ?
+				// https://www.w3schools.com/css/css_dimension.asp
+				// https://medium.freecodecamp.org/how-to-center-things-with-style-in-css-dc87b7542689   among others
 
 				console.log("making code with '" + link + "'");
 				
@@ -60,7 +76,7 @@
 	
 	
 	
-  </body>
+</body>
 </html>
 
 

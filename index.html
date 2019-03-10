@@ -4,58 +4,58 @@
     <title>Welcome</title>
 		
     <style>
-
+	 * { font: 30px Helvetica, Arial; text-align: center;}
+	
+	#div {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	}
     </style>
   </head>
   
   
-  <body>
-  		
+  <body>		
 	
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script src="/qrcode.js"></script>
 	
-	<div id="qrcode"></div>
-
 	
-	
-	<script>
+	<script>	
 	$(function () {
+	
 		var socket = io();
-
 		
+		// send an initial dummy signal to get the IP settings for the first code
 		socket.emit('user scans');
-		// send an initial dummy signal to get the IP settings
 		
 		
-		//var link = "http://localhost:3000/user?id=";
-		
-		qrcode = new QRCode(document.getElementById("qrcode"), "dummy"); // first ID would always be 1
-
 		socket.on('reset code', function(msg){
-			qrcode.clear();
+			
+			var link = msg;		
+			
+			//wait a few seconds / delay the showing of the new code
+			setTimeout(function(){      //https://stackoverflow.com/questions/1836105/how-to-wait-5-seconds-with-jquery			
+				
+				// dynamically re-create the div element
+				var $newdiv1 = $( "<div id='qrcode'></div>" );
+				$( "body" ).append( $newdiv1 );
+				
+				// generate a code
+				qrcode = new QRCode(document.getElementById("qrcode"), link);
 
+				console.log("making code with '" + link + "'");
+				
+			},2000);
+			
+			$("#qrcode").detach();		// clear/hide/remove the current code - its div tag
 
-			
-			//qrcode.makeCode(Date());
-			
-			var link = msg;
-			
-			qrcode.makeCode(link);
 		});
-
+		
+		
 	});
 	</script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

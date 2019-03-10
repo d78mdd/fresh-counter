@@ -6,6 +6,7 @@ in app.js change var IP to have the server's address on the current LAN
 
 in the folder:
 > npm install
+
 > node app.js
 
 in browser:

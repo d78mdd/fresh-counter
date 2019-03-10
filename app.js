@@ -12,7 +12,8 @@ var io = require('socket.io')(http);
 
 
 var os = require( 'os' );
-var IP = os.networkInterfaces()['Local Area Connection 3'][1]['address'];
+//var IP = os.networkInterfaces()['Local Area Connection 3'][1]['address'];
+var IP = "localhost";
 console.log( "server's local address : " + IP );
 //https://stackoverflow.com/questions/3653065/get-local-ip-address-in-node-js
 //turns out there's no fully automatic way for this

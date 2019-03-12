@@ -34,6 +34,7 @@
 		
 		
 		
+		// decoding URL params
 		var getUrlParameter = function getUrlParameter(sParam) {
 			var sPageURL = window.location.search.substring(1),
 				sURLVariables = sPageURL.split('&'),
@@ -46,17 +47,16 @@
 				}
 			};
 		};
-		// decoding URL params
 		// https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
 		
 		
 		
 		var id = getUrlParameter('id');
 
-		console.log('page -user-: id = ' + id)
 		$('#p2').text(greet+id);
 		
 		
+		console.log('page -user-: id = ' + id);
 	});
 	</script>
 	

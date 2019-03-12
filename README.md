@@ -1,6 +1,6 @@
 # fresh counter
 
-download/check out the files
+download/checkout the files
 
 in app.js change var IP to have the server's address on the current LAN
 

@@ -35,7 +35,6 @@ var connection = mysql.createConnection({
   database : 'users'
 });
 
-var someVar = [];
 
 
 
@@ -59,10 +58,12 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 		throw err
 
 
-	console.log('The solution is: ', rows[0].id);
+	//console.log('The solution is: ', rows[0].id);
 	
 
-	Count = rows[0].id;
+	Count = rows[0].id;  // now we have the last saved value from the DB
+
+	Count++;  // number to be used for the upcoming user
 
 	console.log('and Count comes to be : ', Count);
 
@@ -70,6 +71,7 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 
 	app.get('/', function(req, res){
 		res.sendFile('index.html');
+		//res.
 	});
 	app.get('/user', function(req, res){
 		res.sendFile(__dirname+'/user.html');
@@ -81,11 +83,29 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 
 	io.on('connection', function(socket){
 
-		socket.on('user scans', function(){
+		socket.on('request initial data', function(){
+			console.log('main page initialized');
+			//socket.emit('initial data', Count);
+			io.emit('initial data', IP + ':3000/user?id=' + Count);
+		});
 
-			io.emit('reset code', IP + ':3000/user?id=' + Count);
+
+		socket.on('user scans', function(){
+		// server has been "poked" by a visiting user , recording that
+
+			
+			connection.query('INSERT INTO USERS (`number`,`time`) VALUES ("1", current_timestamp)'  // Date.now
+			, function(err,rows,fields){
+				if (err)
+					throw err
+				console.log('The solution is: ', rows[0]);
+				}
+			)
+			//we issue the recording into the DB as the "Async callback function"
+			//while that's taking place , we prepare the next code with the following 2 lines
 		
 			Count++;
+			io.emit('reset code', IP + ':3000/user?id=' + Count);
 
 			console.log(IP + ':3000/user?id=' + Count + ' is the link for the upcoming user');
 		});
@@ -125,7 +145,7 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 
 //console.log();  //something apropriate 
 
-connection.end();
+//connection.end();   // what if it remains commented?
 
 
 
@@ -141,14 +161,6 @@ connection.end();
 
 
 
-
-//connection.query('INSERT INTO USERS (`number`,`time`) VALUES ("1", current_timestamp)'  // Date.now
-//, function(err,rows,fields){
-//	if (err)
-//		throw err
-//	console.log('The solution is: ', rows[0]);
-//	}
-//)
 
 
 

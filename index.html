@@ -41,7 +41,22 @@
 		var socket = io();
 		
 		// send an initial dummy signal to get the IP settings for the first code
-		socket.emit('user scans');
+		//socket.emit('user scans');
+		//no , this is not supposed to happen
+
+		socket.emit('request initial data');
+		socket.on('initial data', function(data){
+
+			var $nd = $( "<div id='qrcode' ></div>" );
+			$( "body" ).append( $nd );
+
+			qrcode = new QRCode(document.getElementById("qrcode"), data+'');    // QRCode does not work with a pure number as a 2nd argument
+
+			document.getElementById("qrcode").style.margin="0 auto";
+			document.getElementById("qrcode").style.width="256px";
+
+			console.log("making initial code with '" + data + "'");
+		});
 		
 		
 		socket.on('reset code', function(link){

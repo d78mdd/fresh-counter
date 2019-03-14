@@ -37,12 +37,13 @@
 		// receive user info
 		socket.on('user info', function(info){
 
-			
 
-			console.log("received user info: " + info);
+
+			console.log("users in current queue: " + info);
+			console.log("expected waiting time : " + info*2 + " minutes");
 		});
 
-		
+			
 		
 		// decoding URL params
 		var getUrlParameter = function getUrlParameter(sParam) {

@@ -32,6 +32,16 @@
 
 		socket.emit('user scans');   // no need to "emit" back any special data besides a "poke" ?
 		
+
+
+		// receive user info
+		socket.on('user info', function(info){
+
+			
+
+			console.log("received user info: " + info);
+		});
+
 		
 		
 		// decoding URL params

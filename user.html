@@ -76,7 +76,7 @@
 		var greet2 = "your turn will come after approximately " ;
 		var queue;
 
-		socket.emit('user scans');	 // no need to "emit" back any special data besides a "poke" ?
+		socket.emit('user scan attempted');	 // no need to "emit" back any special data besides a "poke" ?
 
 		
 
@@ -85,29 +85,39 @@
 			id_from_socket = param;
 			console.log("id from socket = " + id_from_socket);
 
-			if (id_from_socket==undefined)
-				console.log("invalid or no ID received from socket");
+			if (id_from_socket==undefined || id_from_url!=id_from_socket)
+				console.log("undefined or invalid ID");
+			else
+			{
 
-			if (id_from_url!=id_from_socket)
-				console.log('invalid ID (url and socket id do not match)');
+				console.log("ID is valid");
+				
+
+				// tell the server the check has been made and then wait for user's info
+				socket.emit('user scan valid');
+
+
+				// receive user info
+				// only after we have received the user ID through socket and made the check
+				socket.on('user info', function(info){
+
+					queue = info-1;
+
+					$('#p1').text(greet1+queue);
+					$('#p2').text(greet2+queue*3+" minutes");
+
+
+					console.log("users in current queue: " + queue);
+					console.log("expected waiting time : " + queue*3 + " minutes");
+				});
+
+
+			}
 		});
 
 
 
 
-
-		// receive user info
-		socket.on('user info', function(info){
-
-			queue = info-1;
-
-			$('#p1').text(greet1+queue);
-			$('#p2').text(greet2+queue*3+" minutes");
-
-
-			console.log("users in current queue: " + queue);
-			console.log("expected waiting time : " + queue*3 + " minutes");
-		});
 
 					
 		

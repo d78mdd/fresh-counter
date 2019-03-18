@@ -201,58 +201,58 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 
 
 		//
-		socket.on('user scans', function(){
+		socket.on('user scan attempted', function(){
 		// server has been "poked" by a visiting user ,
 
 			
 			socket.emit('user id',Count);
-				console.log('ID from socket', Count);
+			console.log('ID from socket', Count);
 
 
 
+			socket.on('user scan valid', function(){
 
 
 
-
-
-			// , recording that
-			connection.query('INSERT INTO USERS (`number`,`time`) VALUES ("1", Now())'  
-			, function(err,rows,fields){
-				if (err)
-					throw err;
-				console.log('  successful insert');
-				}
-			)
-			//we issue the recording into the DB as the "Async callback function"
-			//while that's taking place , we prepare the next code with the following 2 lines
-
-
-			//add the user to the queue
-
-			queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
-			,  function (err) {
+				// talk to the user page
+				socket.emit('user info', queue.length());
 
 
 
-				console.log('  user served, ' + queue.length() + ' remain.');
-				}
-			)
+				// record the user into the database
+				connection.query('INSERT INTO USERS (`number`,`time`) VALUES ("1", Now())'  
+				, function(err,rows,fields){
+					if (err)
+						throw err;
+					console.log('  successful insert');
+					}
+				)
+				//we issue the recording into the DB as the "Async callback function"
+				//while that's taking place , we prepare the next code with the following 2 lines
 
 
-			//
-			Count++;	// maybe this should go up in the callback - here it would increment even if insert failed
-			io.emit('reset code', IP + ':3000/user?id=' + Count);    // this too
+				// push the user to the queue
+				queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+				,  function (err) {
+					console.log('  user served, ' + queue.length() + ' remain.');
+					}
+				)
 
 
-			console.log(IP + ':3000/user?id=' + Count + ' will be the link for the next user');
+				// talk to main page
+				Count++;	// maybe this should go up in the callback - here it would increment even if insert failed
+				io.emit('reset code', IP + ':3000/user?id=' + Count);    // this too
 
 
 
-			console.log("currently waiting users : " + queue.length());
+				// log into main console
+				console.log(IP + ':3000/user?id=' + Count + ' will be the link for the next user');
+				console.log("currently waiting users : " + queue.length());
 
-			
-			// send user info (for user.html page)
-			socket.emit('user info', queue.length());
+			});
+
+
+
 		});
 
 	});

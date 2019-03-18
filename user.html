@@ -30,12 +30,7 @@
 
 
 
-<style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  </style>
+
 
 
 
@@ -53,31 +48,6 @@
 	
 	$(function () {
 		
-		var socket = io();
-		
-		var greet1 = "your order in the queue is " ;
-		var greet2 = "your turn will come after approximately " ;
-		var queue;
-
-		socket.emit('user scans');	 // no need to "emit" back any special data besides a "poke" ?
-		
-
-
-		// receive user info
-		socket.on('user info', function(info){
-
-			queue = info-1;   // not the best way to go
-
-			$('#p1').text(greet1+queue);
-			$('#p2').text(greet2+queue*3+" minutes");
-
-
-			console.log("users in current queue: " + queue);
-			console.log("expected waiting time : " + queue*3 + " minutes");
-		});
-
-			
-		
 		// decoding URL params
 		var getUrlParameter = function getUrlParameter(sParam) {
 			var sPageURL = window.location.search.substring(1),
@@ -92,12 +62,55 @@
 			};
 		};
 		// https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+		var id_from_socket;
+
+		var id_from_url = getUrlParameter('id');		
 		
+		console.log("id from url = " + id_from_url);
+
+
+
+		var socket = io();
 		
+		var greet1 = "your order in the queue is " ;
+		var greet2 = "your turn will come after approximately " ;
+		var queue;
+
+		socket.emit('user scans');	 // no need to "emit" back any special data besides a "poke" ?
+
 		
-		var id = getUrlParameter('id');		
+
 		
-		console.log('page -user-: id = ' + id);
+		socket.on('user id', function(param) {
+			id_from_socket = param;
+			console.log("id from socket = " + id_from_socket);
+
+			if (id_from_socket==undefined)
+				console.log("invalid or no ID received from socket");
+
+			if (id_from_url!=id_from_socket)
+				console.log('invalid ID (url and socket id do not match)');
+		});
+
+
+
+
+
+		// receive user info
+		socket.on('user info', function(info){
+
+			queue = info-1;
+
+			$('#p1').text(greet1+queue);
+			$('#p2').text(greet2+queue*3+" minutes");
+
+
+			console.log("users in current queue: " + queue);
+			console.log("expected waiting time : " + queue*3 + " minutes");
+		});
+
+					
+		
 	});
 	</script>
 	

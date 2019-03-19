@@ -1,7 +1,9 @@
 # fresh counter
 
 > sudo raspi-config
+
 3 , B1 , B4
+
 5 , yes
 
 

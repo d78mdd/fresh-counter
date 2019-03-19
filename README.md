@@ -15,14 +15,13 @@ localhost:3000/user?id=1 ; localhost:3000/user?id=2 ; ...
 
 
 for hiding the cursor
+> sudo apt-get install unclutter
 
-	> sudo apt-get install unclutter
-
-	> nano ~/.config/lxsession/LXDE/autostart
+> nano ~/.config/lxsession/LXDE/autostart
 
 
 to start up with kiosk, node app and cursor off 
-	> sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+> sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
 	to be like:
 		@lxpanel --profile LXDE-pi

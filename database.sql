@@ -53,6 +53,13 @@ then edit the app.js file > var connection
 
 
 
+ALTER TABLE `users`.`users` 
+CHANGE COLUMN `number` `products` INT(5) NULL DEFAULT NULL ;
+
+
+
+
+
 
 
 

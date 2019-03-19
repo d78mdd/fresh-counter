@@ -28,7 +28,8 @@ var Count = 1;  //the number of the following user
 //var IP = os.networkInterfaces()['Local Area Connection 3'][1]['address'];
 
 
-var IP = "192.168.178.60";
+//var IP = "192.168.178.60";
+var IP = "localhost";
 
 
 //var IP = "localhost";
@@ -48,15 +49,20 @@ var connection = mysql.createConnection({
 	database : 'users'
 });
 
+var time = 0
+
 
 
 //sleep function definition
 function sleep() {
-	return new Promise(resolve => setTimeout(resolve, 5000));  // 20 seconds for "serving" a user
+	return new Promise(resolve => setTimeout(resolve, 20000));  // 20 seconds for "serving" a user
 };
 
 //queue definition
 var queue = async.queue( async function (task,callback) {    // without "async" the "await sleep()" has no visible effect
+	
+	time-=task;
+	
 	console.log('Serving user');
 	await sleep();
 	callback();
@@ -111,46 +117,94 @@ maybe if the DB is not created it should create it on its own
 
 
 
+
+
 //dummy users
-//
-//
-//queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
-//, function (err) {
-//			
-//	console.log('User a served. ' + queue.length() + 'remain');
-//	}
-//)
-//queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
-//, function (err) {
-//	
-//	//console.log('Serving user b');
-//	console.log('User b served. ' + queue.length() + 'remain');
-//	}
-//)
-//queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
-//,  function (err) {
-//	
-//	//console.log('Serving user c');
-//	console.log('User c served. ' + queue.length() + 'remain');
-//	}
-//)
-//queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
-//, function (err) {
-//	
-//	//console.log('Serving user d');
-//	console.log('User d served. ' + queue.length() + 'remain');
-//	}
-//)
-//queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
-//, function (err) {
-//	
-//	//console.log('Serving user e');
-//	console.log('User e served. ' + queue.length() + 'remain');
-//	}
-//)
-//
+
+time += 3 ;
+console.log("time=" + time);
+queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+			
+	console.log('User a served. ' + queue.length() + ' remain');
+	//time-=queue.uTime;
+	
 
 
+	//console.log(err);
+	//console.log(data);
+	//console.log(data1);  // output TypeError: callback is not a function
+	//console.log(data2);  // undefined
+	//console.log(data.name);
+	//console.log(data.uTime);
+	
+
+
+	console.log("should take " + time + " minutes");
+
+	//console.log(queue.workersList()); // output: []
+	//console.log(queue.running()); // output: 0
+
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	//console.log('Serving user b');
+	console.log('User b served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+,  function (err) {
+	
+	//console.log('Serving user c');
+	console.log('User c served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	//console.log('Serving user d');
+	console.log('User d served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	//console.log('Serving user e');
+	console.log('User e served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+
+
+
+
+
+
+
+
+var userinfo;
 
 
 
@@ -163,9 +217,14 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 
 	Count = rows[0].id;  // now we have the last saved value from the DB
 
+	//time = sum of all currently served users ??
+
+
 	Count++;  // number to be used for the upcoming user
 
 	console.log('upcoming user', Count);
+
+
 
 
 
@@ -177,9 +236,6 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 	app.get('/user', function(req, res){
 		res.sendFile(__dirname+'/user.html');
 	});
- 
-
-
  
 
 
@@ -210,33 +266,41 @@ connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,ro
 
 
 
-			socket.on('user scan valid', function(){
+			socket.on('products entered', function(prd){
 
-
-
-				// talk to the user page
-				socket.emit('user info', queue.length());
+				console.log("number of products: " + prd);
 
 
 
 				// record the user into the database
-				connection.query('INSERT INTO USERS (`number`,`time`) VALUES ("1", Now())'  
+				connection.query('INSERT INTO USERS (`products`,`time`) VALUES ('+prd+', Now())'  
 				, function(err,rows,fields){
 					if (err)
 						throw err;
 					console.log('  successful insert');
 					}
 				)
-				//we issue the recording into the DB as the "Async callback function"
-				//while that's taking place , we prepare the next code with the following 2 lines
+
+
+				// talk to the user page
+				socket.emit('user info', { queueL : queue.length(), queueTime : time} );
+
+
+				time += prd * 3 ; // increase overall waiting time according to the new user's product list
+				console.log("time=" + time);
 
 
 				// push the user to the queue
-				queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+				queue.push( prd*3
 				,  function (err) {
 					console.log('  user served, ' + queue.length() + ' remain.');
+					
+					console.log("should take " + time + " minutes");
 					}
 				)
+
+
+
 
 
 				// talk to main page

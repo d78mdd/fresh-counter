@@ -1,0 +1,4141 @@
+
+i even started using VNC (server and client) to connect to this Raspberri
+and the "client" knows about that, sounded okay about that
+oh, he never asked if i uninstalled the nginx and the other stuff from the RPI hah
+
+the presentation was cool
+Arduino ? i think there was one
+
+seventeen
+17 projects to choose from in this seminar
+and only a few were presented / are being worked on during the seminar
+like 5-6-7 projects
+there were 1-2 more projects using RaspberryPi3
+other were using MEAN stack ("too" , though I use just some parts) , and NodeJS too and Express too
+
+others had bugs too
+others seemed nervious while presenting too
+	an indian with an accent was very hard to understand
+	a french? with an accent too - was even harder
+others had uninplemented features too hah
+	like the guys with the interactive touch-table
+		"multitouch couch table" was it? , ah yes
+		https://docs.google.com/document/d/1wM01smGhO_IRHvLnK2oEe9s2WIp3NUc2LzLCBZdm27U/edit#
+		Project number 8
+		they seemed to have quite a serious front-end - mutliple menus , options , comparing of products
+		but , the table detects only objects with very specific codes on their bottom
+			, objects can't be moved - i think it detects only one object now , in the middle of the table , with that round "cursor?"/"show-er?"/"object placement identifier?" being like hardcoded there - just sitting all the time
+		the presenter had some years of experience in something like "user design" so the cool graphics have not been a problem to him
+			the other 3 guys seem to be the "back-end" team
+	cheese counter
+		two girls
+			i think the taller said "hi"
+		the little "cheese"s bullet points were a nice detail :p
+	context based TV or similar if i remember correctly
+		they had their issues too - they mentioned the usage of proxy
+		i think there was this need of "alexa, tell the tv to [mute]" instead of just "[mute]"
+		DFKI "gave" them some proxy?
+		i guess they need a permanent internet connection for the Alexa to work out its commands
+
+Project 1: IRL/UMTL-Teaser Tool
+Project 2: A Novel Haptic VR Controller
+Project 13: Accessible PriceTags
+Project 16: Demo Management System
+
+so 8 projects
+okay, half
+they felt less hah
+or was it that the content on the Project Requirements document felt a lot ?
+
+
+
+
+
+
+
+hah nobody / no animals reading the document now ;d
+	last night was like 4-5 other people shows as animals were visible hehe
+okay , i made a copy on my GDrive
+
+oh, "anonymous coyote" is reading the document now
+
+
+
+
+hah , how i set up myself for the presentation
+made a hotspot from my phone and connected my laptop to the hotspot
+
+	how is this sentence supposed to be made/sound/composed?
+		.... and connected the laptop to it
+		... and connected the laptop to the hotspot
+		...and connected my laptop to the phone
+		....and connected my laptop to my phone's hotspot
+		?? :D
+
+yeah everyone was there mostly with just laptops
+the only exception were the guys with the alexa and interactive / contex-based TV
+
+
+
+
+i think i got lucky with my mentor/client
+he seems more on the good side
+there are others who seem more demanding and challenging
+one of them , to me , was like "only those 2? for two weeks?"
+
+
+
+
+yeah, the big news supposedly
+i shall work alone from now on
+my colleague did not arrive
+he did not care he may get kicked off the project and the seminar
+he is probably already "dismissed" by the organisers
+
+
+
+hah , i never mentioned i would implement an option for the user to cancel/unqueue himself
+
+
+
+videos (including cooking ones :p)
+music
+jokes
+technologies
+there was everything to entertain them mentors
+
+anyways it was .... cool for me
+
+the pace in this environment seems quite fast i guess
+though bugs do exist
+
+
+
+
+
+my QRcode scanner app for android seems detect very slowly its first code on start
+	test1
+		okay, started my heaviest apps and then the scanner - scan was instant
+	2
+		close the app
+		wifi turned on seems not to make things slower
+		open the app
+	3
+		close the app
+		3g on and hotspot on, reopen the browser, then app
+		aaand code was detected slowly !
+		;
+		close
+		open a chat app
+		open, (okay same code) detected before i even see it in the "rectangle" box !
+
+
+
+
+"you can't see from there but my phone have detected the link and can now open it in the browser"
+hah...
+and then my mentor be like "can youu like open that link on the browser [on your laptop]?"
+"oh , yes, sure"
+
+
+
+nobody noticed i don't even have raspberry with me hah
+i never mentioned i have the code working both on the RPI and my laptop
+yeah, i guess the smart ones figured that out since Node seems pretty damn popular and is multiplatform.. ;d
+
+
+
+
+in that room
+-2.17 , right on the right from the entrance
+there was no wifi?
+i saw the router on the ceiling , with 4 antennas
+
+i could not connect to "eduroam" with s8dikost@stud..uni..saar..de
+
+
+
+
+my Windows10 could not create a hotspot
+and i think i'm replicating this now at home
+
+	Windows 10 cannot create "Mobile Hotspot" while not connected to another network
+	wtf ??
+
+	...
+
+	okay i think i broke it ;d
+	now can't use that hotspot lol
+
+
+
+
+
+hmm
+i never mentioned this part
+"
+motivation
+	why would anyone use this thing ?
+
+		to have free time
+			people need time
+
+		people don't want to stay in one place when they know what they want or need
+
+		being stalled is frightening
+		(well, it's not That deep in this case ;d)
+
+		it's just supposed to make people's lives 1 idea better/smoother/easier
+"
+
+and maybe including some of this
+"
+(at least that's what i've got from the whole thing right now)
+(maybe a german would want to implement that to keep track of food bought and organise people into a nice predictable shape)
+
+fairness
+does it increase fairness ?
+if the systems works properly it should be impossible to take someone else's turn or something like that , right ?
+"
+
+aham, some parts sound silly but others' projects sounded a bit silly too
+heh
+developing a system to point at products instead of you ? - the cheese counter
+( hah "thank you for your cheesy attention")
+fun though
+
+
+
+some of the organisers seemed really serious
+
+man, some of them look so young-and-ambitious
+
+
+
+
+i never mentioned/stressed that my pages use Bootstrap and as result are responsive  
+
+
+
+--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========================
+
+
+
+so
+where should we / I start from now on ?
+	my bugs list?
+	the missing features from the requirements list?
+	the things i mentioned on the presentation?
+
+	i thought of rebuilding the entire app from scratch again  (thinking of the feeling when i did that the first time)
+
+	more working on adding new things ?
+
+	or more working towards fixing current issues?
+
+
+
+the things i mentioned on the presentation?
+	okay 1 was actually:
+		"i cannot detect the machine's IP on the Local Network"
+	1
+		a single user can queue himself multiple times with the same ID
+	2
+		having a "next" button for the person servant behind the countertop
+		to the question "what if the client does not arrive in like 30 minutes"
+	3
+		fix the async queue() logic so i can use queue.length() function
+
+	oh, and there was a question "how is the current waiting time determined"
+	i was like "it's now hardcoded , but as the option to enter products get impleted this would change too"
+
+
+hah, nobody seemed to care about my problems with the code
+
+i have to admit
+and a bit regret
+that i didn't mentioned them all
+maybe they sounded too "trivial"?
+like the "can't make something start up automatically on raspian boot"
+	i was like "i can't tell them that" lol...
+	and also i knew i havent tried really much / spent much time on this so i wasn't (am not) really stuck heh
+
+
+
+
+
+more working on adding new things ?
+
+or more working towards fixing current issues?
+	
+	i think the async queue length part can wait for now
+
+	i guess i should really prevent a single user ID to queue himself/herself twice in a row
+		yes, someone may need more time, but that should be possible only with a new QR
+
+
+
+
+
+
+
+
+
+so
+
+-it's cool that i made the 2 pages look similar / have the same look-and-feel / theme
+	and that they actually look better than simple html text in the top right corner of your screen :Ds
+
+-it's cool that i managed to make/come up with/compose that presentation
+
+-despite not having used it in the presentation today on 15th
+	it's cool that I ran all that code i worked on in the last week  on the RPI , and with a bit of set up  it worked there too
+
+- it's cool i started the project alone, on my own, from scratch
+
+- that i omitted those template pug pages and engine
+- and also the complex folder-file structure from the ExpressAppGenerator
+
+- and that i installed VNC client on my laptop  
+	starting the RPI in that "headless" mode
+	and connecting through SSH to it
+	and installing VNC server there
+
+
+..
+- it was cool set up / install a database / sql/msql/mysql community server
+	and to write to it using a javascript web application
+	and to then read from it
+- it is cool to make the app talk/output to  command console and server browser and client browser
+- was cool to make use of a QRCode library
+	and to make it reload without manual intervention
+
+
+
+
+
+
+
+
+
+
+===================================
+
+
+
+
+
+
+16th
+today - pretty much all day work
+17 - also all day work
+
+18 monday - seems free all day
+19th tuesday - all or almost all day free too
+
+20th - busy - almost all day
+
+21st - meet Maximilian Altmeyer for a status check or similar
+
+---
+
+22nd - large part of the day busy
+
+23 - first half free
+
+24th - free
+
+
+
+
+
+
+
+
+
+
+=======================
+17
+
+//queue definition
+var queue = async.queue(async function (task,callback) {    // without "async" the "await sleep()" has no visible effect
+	--inqueue;
+	console.log('Serving user ' + task.name + '. ' + inqueue + " in queue.");
+	await sleep();    	
+	console.log('User ' + task.name + ' served.');
+	callback();
+}, 1);   // 1 is the "concurency" argument for "queue" - "users" to be served one by one and not at the same time
+		// could be increased in a future version to support multiple 'fresh counters' or even multiple shops ( / pay desks ?)
+
+/*
+tracking of the queue will only happen while the server is running
+should it ?
+*/
+
+so
+i was thinking
+what this code does is just
+say "serving user"  ,  then wait something for some reason  ,  then say some other nonsense
+all before actually having done anything  and/or  having added anything to the queue
+"callback()" - this is where the actual work starts?
+
+and
+this
+			//add the user to the queue
+			++inqueue;
+			queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+			, function (err) {
+				 
+				}
+			)
+is where the actual work is hapenning ?
+and in my case it is empty!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===================================
+
+
+
+18th
+
+this is how the code looks now
+the users unqueue correctly i think
+but the simulation of waiting/ being served gets broken
+
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+[[[[[[[[[[[[[
+
+
+/*
+queuing system for the fresh counter
+
+
+*/
+
+
+// required packages/modules
+var express = require('express');
+var app = express();
+
+var http = 	require('http').Server(app);
+
+var io = require('socket.io')(http);
+
+var mysql = require('mysql');
+
+var async = require('async');
+
+
+
+
+
+var inqueue = 0;    // manually keep track of currently served users because  queue.length gets confused..
+
+
+var Count = 1;  //the number of the following user
+// what should the default value be ? (before even reading from the DB) 0 , 1 , undefined , 9999 or something else ?
+
+//var os = require( 'os' );
+//var IP = os.networkInterfaces()['Local Area Connection 3'][1]['address'];
+
+
+var IP = "192.168.178.60";
+
+
+//var IP = "localhost";
+console.log( "server's local address : " + IP );
+//https://stackoverflow.com/questions/3653065/get-local-ip-address-in-node-js
+//turns out there's no fully automatic way for this
+
+
+app.use(express.static(__dirname));
+
+
+// database connection definition
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : 'root',
+	database : 'users'
+});
+
+
+
+//sleep function definition
+function sleep() {
+	return new Promise(resolve => setTimeout(resolve, 2000));  // 20 seconds for "serving" a user
+};
+
+//queue definition
+var queue = async.queue( async function (task,callback) {    // without "async" the "await sleep()" has no visible effect
+
+	callback();
+}, 1);   // 1 is the "concurency" argument for "queue" - "users" to be served one by one and not at the same time
+		// could be increased in a future version to support multiple 'fresh counters' or even multiple shops ( / pay desks ?)
+
+/*
+tracking of the queue will only happen while the server is running
+should it ?
+*/
+
+
+
+
+
+queue.drain = function() {
+    console.log('All currently waiting users have been served. Counter is currently idle. Awaiting users...');
+};
+
+//
+//// adding dummy users to the queue
+//++inqueue;
+//queue.push({name: 'a'}, function (err) {
+//    //console.log('I in');
+//    
+//    //console.log('finished processing user1');
+//});
+//++inqueue;
+//queue.push({name: 'b'}, function (err) {
+//    //console.log('II in');
+//    
+//   //console.log('finished processing user2');
+//});
+//
+//
+
+
+
+
+
+
+
+
+// connect to the database
+connection.connect();
+// if there's an error it would be seen from the SELECT below?
+/*
+maybe if the DB is not created it should create it on its own
+
+*/
+
+
+
+
+
+
+
+queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	console.log('Serving user a');
+	async function ac() {await sleep();}
+	ac();	
+	console.log('User a served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	console.log('Serving user b');
+	async function ac() {await sleep();}
+	ac();	
+	console.log('User b served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+,  function (err) {
+	
+	console.log('Serving user c');
+	async function ac() {await sleep();}
+	ac();	
+	console.log('User c served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	console.log('Serving user d');
+	async function ac() {await sleep();}
+	ac();	
+	console.log('User d served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	console.log('Serving user e');
+	async function ac() {await sleep();}
+	ac();	
+	console.log('User e served. ' + queue.length() + 'remain');
+	}
+)
+
+
+
+
+
+
+//initial selection of the latest user from the database
+//if this fails nothing else should happen - everything else needs this to finish
+connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,rows,fields){
+	if (err)
+		throw err
+
+
+	Count = rows[0].id;  // now we have the last saved value from the DB
+
+	Count++;  // number to be used for the upcoming user
+
+	console.log('upcoming user', Count);
+
+
+
+	// definitions of the "routes" for the RPI screen and the user pages
+	app.get('/', function(req, res){
+		res.sendFile('index.html');
+		//res.
+	});
+	app.get('/user', function(req, res){
+		res.sendFile(__dirname+'/user.html');
+	});
+ 
+
+
+ 
+
+
+
+
+
+
+	// 
+	io.on('connection', function(socket){
+
+		//
+		socket.on('request initial data', function(){
+			console.log('main page initialized');
+			//socket.emit('initial data', Count);
+			io.emit('initial data', IP + ':3000/user?id=' + Count);
+		});
+
+
+
+
+		//
+		socket.on('user scans', function(){
+		// server has been "poked" by a visiting user ,
+
+			
+			socket.emit('user id',Count);
+
+
+
+
+
+
+
+
+			// , recording that
+			connection.query('INSERT INTO USERS (`number`,`time`) VALUES ("1", Now())'  
+			, function(err,rows,fields){
+				if (err)
+					throw err;
+				console.log('successful insert');
+				}
+			)
+			//we issue the recording into the DB as the "Async callback function"
+			//while that's taking place , we prepare the next code with the following 2 lines
+
+
+			//add the user to the queue
+			++inqueue;
+			queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+			, async function (err) {
+				--inqueue;
+				console.log('Serving user ' + task.name + '. ' + inqueue + " in queue.");
+				await sleep();    	
+				console.log('User ' + task.name + ' served.');
+				}
+			)
+
+
+			//
+			Count++;	// maybe this should go up in the callback - here it would increment even if insert failed
+			io.emit('reset code', IP + ':3000/user?id=' + Count);    // this too
+
+
+			console.log(IP + ':3000/user?id=' + Count + ' is the link for the upcoming user');
+
+
+
+			console.log("currently waiting users : " + inqueue);
+
+			
+			// send user info (for user.html page)
+			socket.emit('user info', inqueue);
+		});
+
+	});
+
+
+
+
+
+	http.listen(3000, function(){
+		console.log('listening on *:3000');
+	});
+
+
+
+
+
+
+
+
+
+	}
+)
+
+
+
+
+
+
+
+
+//console.log();  //something apropriate 
+
+//connection.end();   // what if it remains commented?
+
+
+
+
+
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+]]]]]]]]]]]]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//sleep function definition
+function sleep() {
+	return new Promise(resolve => setTimeout(resolve, 2000));  
+};
+
+//queue definition
+var queue = async.queue( async function (task,callback) {    
+
+	callback();
+}, 1);   
+
+
+....
+....
+
+queue.push({name: Count}   
+, function (err) {
+	
+	console.log('Serving user a');
+	async function ac() {console.log(1);await sleep(); console.log(2);}
+	ac();	
+	console.log('User a served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}   
+, function (err) {
+	
+	console.log('Serving user b');
+	async function ac() {await sleep();}
+	ac();	
+	console.log('User b served. ' + queue.length() + 'remain');
+	}
+)
+
+so , now like this above
+this is the result
+	
+	Serving user a
+	1
+	User a served. 4remain
+	Serving user b
+	User b served. 3remain
+	Serving user c
+	User c served. 2remain
+	Serving user d
+	User d served. 1remain
+	Serving user e
+	User e served. 0remain
+	All currently waiting users have been served. Counter is currently idle. Awaiting users...
+	upcoming user 359
+	listening on *:3000
+	2
+
+so the "scheduling"/the start of all the "push()-ed" functions is asyncronious
+the actions inside the first are syncronious
+
+
+
+
+
+
+
+
+okay
+
+function sleep() {
+	return new Promise(resolve => setTimeout(resolve, 2000));  
+};
+
+//queue definition
+var queue = async.queue( async function (task,callback) {    
+	console.log('Serving user');
+	await sleep();
+	callback();
+}, 1);
+
+...
+...
+
+queue.push({name: Count}   
+, function (err) {
+			
+	console.log('User a served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}   
+, function (err) {
+	
+	//console.log('Serving user b');
+	console.log('User b served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}   
+,  function (err) {
+	
+	//console.log('Serving user c');
+	console.log('User c served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}
+, function (err) {
+	
+	//console.log('Serving user d');
+	console.log('User d served. ' + queue.length() + 'remain');
+	}
+)
+queue.push({name: Count}
+, function (err) {
+	
+	//console.log('Serving user e');
+	console.log('User e served. ' + queue.length() + 'remain');
+	}
+)
+
+
+
+
+
+
+
+
+uhm
+current code of adding a user
+
+			//add the user to the queue
+			++inqueue;
+			queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+			, async function (err) {
+				--inqueue;
+				console.log('Serving user ' + task.name + '. ' + inqueue + " in queue.");
+				await sleep();    	
+				console.log('User ' + task.name + ' served.');
+				}
+			)
+
+i've definitely broke my tracking with "inqueue" lol
+dunno what have i tried here
+
+
+
+
+
+
+okay, i think i've partly fixed my queue
+it seems to hang from time to time
+i have no idea why
+but
+users get queued and unqueued correctly
+commandline output:
+	user?id=408 is the link for the upcoming user
+	currently waiting users : 9
+	successful insert
+	192.168.178.60:3000/user?id=409 is the link for the upcoming user
+	currently waiting users : 10
+	successful insert
+	192.168.178.60:3000/user?id=410 is the link for the upcoming user
+	currently waiting users : 11
+	successful insert
+	User d served. 11remain
+	Serving user
+	User e served. 10remain
+	Serving user
+	User served. 9remain
+	Serving user
+
+
+
+
+
+
+
+""
+so
+where should we / I start from now on ?
+""
+wow,this feels like yesterday instead of 3 days ago
+
+but
+i did install and log in Simplenote yesterday !
+
+
+
+
+
+
+
+
+			queue = info-1;   // not the best way to go
+
+hah
+doesnt have to be that way anymore
+now that i fixed the queue
+aand how i use socket.on() in the secondary page ;d
+
+things are better, i don't need my dummy "queue / unqueue/inqueue" variables and "-1" stuff
+
+
+
+
+
+
+now
+it should be easy to change their products
+
+
+
+
+
+okay
+a 1st user does not have to wait , so "Waiting Time" is 0(zero)
+the next one would get too zero waiting time because the only user in the queue is being served right now
+
+
+
+
+
+
+
+
+
+
+
+okay
+this 
+
+		//get ID from server too through socket to make sure the page has a valid one 
+		socket.on('user id', function(param) {
+
+			id_from_socket = param;
+			console.log("id from socket = " + id_from_socket);
+
+
+			if (id_from_url != id_from_socket || id_from_socket == undefined)
+				console.log('invalid or missing ID');
+			else{
+			
+				//now that the page knows it has a valid ID it can tell the server
+				socket.emit('user scans');	 // no need to "emit" back any special data besides a "poke" ?
+
+				// receive user info
+				socket.on('user info', function(info){
+
+					queue = info-1;
+
+					$('#p1').text(greet1+queue);
+					$('#p2').text(greet2+queue*3+" minutes");
+
+
+					console.log("users in current queue: " + queue);
+					console.log("expected waiting time : " + queue*3 + " minutes");
+				});
+
+
+
+			}
+		});
+
+is how i want my user page to behave like
+but it doesnt
+
+
+
+
+
+
+
+oh my app is so vilnuerable
+my user page always receives the correct ID
+so anyone could write a page that reads that and sends a confirmation through the socket? :D
+
+
+
+
+
+
+
+
+so
+i fixed my queue already
+
+now also users get filtered - only the current ID and none else can be processed by the app
+
+
+
+
+
+
+
+
+
+hah
+my first Commit message
+"filter invalid user IDs"
+since musalasoft
+
+
+
+
+
+okay
+found a bug ;d on my test code ;d
+clicking too fast on that test link  can make the main page generate several codes lol
+
+
+
+
+
+
+
+soo
+is it time for / what's next
+enabling users to enter products count ?
+it should be straightforward enough , now that i've fixed my queue
+i could just write to the DB every time i get a new products count , and , read from the DB every time i need one i guess
+and i could add every count's calculated time to some Time variable  , and , remove from that var each oldest user
+
+
+
+
+
+
+okay , maybe a better idea is to set up the startup
+
+sadface
+
+unfortunately i can't seem to be able install a raspbian on a vm on my laptop
+...just run it lol
+
+
+
+
+
+
+
+
+
+Feb 21 18:59:13 raspberrypi cron[288]: (CRON) INFO (Running @reboot jobs)
+
+this is the last system log entry on the raspberry
+using this command
+>  grep cron /var/log/syslog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+with user pi
+> cd /etc/xdg/lxsession/LXDE-pi/
+> nano autostart
+add /usr/bin/chromium --kiosk --ignore-certificate-errors --disable-restore-session-state "http://www.domain.com"
+
+can't 
+	 [ Error writing autostart: Permission denied ]
+;d
+
+so, did that with root ;d
+
+	so, 18/03/19 19:47
+	i did that change but i can't tell through VNC and putty if it works
+	i need a tv - tomorrow it shall be free
+
+
+maybe i need to add these lines too
+	@xset s noblank
+
+	@xset s off
+
+	@xset –dpms
+
+	@chromium-browser --incognito --kiosk http://www.domain.com
+
+	--noerrdialogs --disable-infobars --kiosk="http://www.knight-of-pi.org"
+
+	#@xscreensaver -no-splash    // comments out the screensaver
+
+	xset s noblank
+	xset s off
+	xset -dpms
+
+	unclutter -idle 0.5 -root &
+
+	sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/pi/.config/chromium/Default/Preferences
+	sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/pi/.config/chromium/Default/Preferences
+
+	/usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk https://pimylifeup.com https://www.adafruit.com &
+
+https://pimylifeup.com/raspberry-pi-kiosk/	
+
+
+or maybe try this 
+
+	> sudo nano /etc/rc.local
+	and add before the line
+		exit 0
+	the following
+		xinit /usr/bin/chromium-browser --no-sandbox --no-first-run --window-size=1920,1080 --noerrdialogs --start-fullscreen \
+	 --start-maximized --disable-notifications --disable-infobars --kiosk --incognito http://localhost:8080 &
+	Now, Chromium starts automatically in kiosk mode after booting and opens a website, here localhost for a remote control.
+
+	http://www.knight-of-pi.org/update-autostart-chromium-for-full-screen-applications/
+
+
+
+also try 
+
+sudo raspi-config
+
+and modify autostart ?
+
+
+
+
+hmm
+
+To autostart chromium on start / boot, without Desktop Environment, you have to do the following:
+
+1. Install Chromium
+My tutorial to install chromium an Raspberry Pi without desktop Environment.
+
+2. Use raspi-config to configure
+
+sudo raspi-config
+-> Boot Config
+–> Desktop / CLI
+—> Console Autologin
+
+2. Add your start script at the end of „.bashrc“
+Mine is
+
+xinit /home/pi/start-c.sh
+Don’t forget the xinit.
+
+My startscript Looks like this:
+
+#!/bin/sh
+# Turn off HDMI to safe energy
+sudo /opt/vc/bin/tvservice -o
+# I want no Cursor, but this doesn't work
+# Rotate touch input by 90°
+matchbox-window-manager -use_cursor no -use_titlebar no &
+xinput set-prop 'FT5406 memory based driver' 'Coordinate Transformation Matrix' 0 -1 1 1 0 0 0 0 1
+# Power saving and screensaver after 2 minutes
+xset dpms 120 120 120
+# watch gpio pin for Motion sensor and start chromium with some options
+gpio-watch -e rising 4&
+chromium-browser  --fast --fast-start --disable-popup-blocking --disable-infobars --kiosk --incognito  --disable-session-crashed-bubble --touch-events=enabled --allow-running-insecure-content https://yoururl/
+
+https://www.ketzler.de/2017/12/raspberry-pi-autostart-chromium-on-login/
+
+
+
+
+
+
+
+
+
+
+
+okay
+as far as the node app running
+seems like generally i have two options
+
+	- init.d
+		https://www.instructables.com/id/Nodejs-App-As-a-RPI-Service-boot-at-Startup/
+		https://maker-tutorials.com/node-js-init-script-neustart-reboot-automatisch-starten-linux-raspberry-pi/
+		https://stackoverflow.com/questions/21542304/how-to-start-a-node-js-app-on-system-boot
+
+	- rc.local
+		https://blog.cloudboost.io/how-to-run-a-nodejs-web-server-on-a-raspberry-pi-for-development-3ef9ac0fc02c
+		https://raspberrypi.stackexchange.com/questions/13743/how-to-run-a-script-node-js-at-startup
+		https://weworkweplay.com/play/raspberry-pi-nodejs/
+
+
+
+
+
+
+Enable all features under "Hyper-V" in "Turn Windows features on or off".
+Restart.
+Disable all features under "Hyper-V" in "Turn Windows features on or off".
+Restart.
+https://superuser.com/questions/1153470/vt-x-is-not-available-but-is-enabled-in-bios
+no effect ;d
+
+
+
+
+
+
+
+
+core isolation > memory integrity - disable
+reboot
+that fixed all my problems with VirtualBox
+
+then
+
+install in a few minutes raspbian / pixel
+
+let the updates finish
+
+enable SSH
+
+
+> sudo nano /etc/rc.local
+	and add before the line
+		exit 0
+	the following
+		xinit /usr/bin/chromium-browser 
+this had no effect
+
+
+and these (probably at this moment)
+	> cd /etc/xdg/lxsession/LXDE-pi/
+	> nano autostart
+	add /usr/bin/chromium 
+
+
+now i can't change raspi-config settings lol
+
+well, undo that change, send reboot command, no effect besides a blinking cursor
+
+
+cold reboot
+
+get loaded the graphical environment
++ auto logged in
++ chromium started ??
+
+shut down
+;
+start up
+
+same - ok :D
+
+
+
+in /etc/xdg/lxsession/LXDE-pi/autostart
+	add @chromium-browser --incognito --kiosk
+		at end of file - no effect
+		as a last @element - no effect
+			/usr/bin/chromium - append -browser - nothing starts ;d
+	reverse append
+	add @chromium - and we have a cool fullscreen thingy !!!
+		then cold reset
+			2 windows - one normal with "restore pages" and one incognito
+	remove --incognito
+		same
+	close and reboot gracefully
+		fullscreen "kiosk"
+	reboot cold
+		two windowed windows
+	add --fast --fast-start and rboot cold
+		same
+	add --disable-session-crashed-bubble
+		same
+	remove those
+	add http://localhost/
+		same
+
+	make default browser
+	make http://localhost/ homepage
+	soft reboot, get two of those ;d
+
+	remove /usr/bin/chromium
+	soft reboot - ok - one page? - localhost
+	cold reboot - ok - one page - localhost , with "Restore pages?" popup
+
+
+
+
+> apt-get install nodejs
+
+write a simple webserver
+like this
+	var http = require('http');
+	http.createServer(function (req, res) {
+	  res.writeHead(200, {'Content-Type': 'text/html'});
+	  res.write(req.url);
+	  res.end();
+	}).listen(8080);
+
+the file /etc/xdg/lxsession/LXDE-pi/autostart
+is like this
+	 @lxpanel --profile LXDE-pi
+	 @pcmanfm --desktop --profile LXDE-pi
+	 @screensaver -no-splash
+
+	 @chromium --kiosk http://localhost:8080/
+
+	 point-rpi
+
+	 node /home/pi/app/app.js
+
+edit homepage like this
+	http://localhost:8080/
+
+
+aaaaaaaaaaand it worksssssssssssssssss
+
+!  !   ! ;
+
+;ppppppppppppppppppppp
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============================================
+
+
+19/03/19
+
+let's see
+chromium home page does not work
+but it's ok as long as the command in /etc/xdg/lxsession/LXDE-pi/autostart loads localhost page
+
+this
+https://raspberrypi.stackexchange.com/questions/68734/how-do-i-disable-restore-pages-chromium-didnt-shut-down-correctly-prompt
+worked for me
+	--app=your.url
+
+
+cursor
+hide it when not moved
+https://stackoverflow.com/questions/41242383/hide-mouse-pointer-on-chromium-kiosk
+	> sudo apt-get install unclutter
+	> nano ~/.config/lxsession/LXDE/autostart
+	add @unclutter -idle 0.1
+works
+awesome
+
+
+
+
+
+
+okay
+time for:
+
+	enable users to unqueue 
+	+
+	to enter number of products
+
+	0=unqueue
+
+	create input box on the page and a button 
+	input
+	click 
+	send over socket
+	remove elements
+
+	wait over socket 
+	show the others
+
+
+
+	server
+	receive over socket 
+	keep the value in db?
+
+
+
+	also keep "served" column or "waiting"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm-8">
+      <h2>Welcome</h2>
+      <h5>you have been queued</h5>
+   
+      <p>You have successfuly scanned the QRcode.</p>
+      <br>
+    </div>
+
+
+
+
+
+
+
+awesome
+i show input box
+take its input (not checked)
+send it to server
+hide the input and show some text instead
+
+
+
+
+
+okay i cannot find a method to access any queue member's data
+i could read the waiting time separately for every user from the database
+
+or?
+
+what if on everyone's completion i just remove his own amount of time from the whole time ?
+
+
+
+
+you want to keep the time tracking in memory ?
+why would you want to do that ?
+
+you don't want frequent reads from the DB ?
+why would you ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+just a snapshot
+
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+
+/*
+queuing system for the fresh counter
+
+
+*/
+
+
+// required packages/modules
+var express = require('express');
+var app = express();
+
+var http = 	require('http').Server(app);
+
+var io = require('socket.io')(http);
+
+var mysql = require('mysql');
+
+var async = require('async');
+
+
+
+
+
+var Count = 1;  //the number of the following user
+// what should the default value be ? (before even reading from the DB) 0 , 1 , undefined , 9999 or something else ?
+
+//var os = require( 'os' );
+//var IP = os.networkInterfaces()['Local Area Connection 3'][1]['address'];
+
+
+//var IP = "192.168.178.60";
+var IP = "localhost";
+
+
+//var IP = "localhost";
+console.log( "server's local address : " + IP );
+//https://stackoverflow.com/questions/3653065/get-local-ip-address-in-node-js
+//turns out there's no fully automatic way for this
+
+
+app.use(express.static(__dirname));
+
+
+// database connection definition
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : 'root',
+	database : 'users'
+});
+
+var time = 0
+
+
+
+//sleep function definition
+function sleep() {
+	return new Promise(resolve => setTimeout(resolve, 1000));  // 20 seconds for "serving" a user
+};
+
+//queue definition
+var queue = async.queue( async function (task,callback) {    // without "async" the "await sleep()" has no visible effect
+	
+	time-=task;
+	
+	console.log('Serving user' + task);
+	await sleep();
+	callback();
+}, 1);   // 1 is the "concurency" argument for "queue" - "users" to be served one by one and not at the same time
+		// could be increased in a future version to support multiple 'fresh counters' or even multiple shops ( / pay desks ?)
+
+/*
+tracking of the queue will only happen while the server is running
+should it ?
+*/
+
+
+
+
+
+queue.drain = function() {
+    console.log('All currently waiting users have been served. Counter is currently idle. Awaiting users...');
+};
+
+//
+//// adding dummy users to the queue
+//++inqueue;
+//queue.push({name: 'a'}, function (err) {
+//    //console.log('I in');
+//    
+//    //console.log('finished processing user1');
+//});
+//++inqueue;
+//queue.push({name: 'b'}, function (err) {
+//    //console.log('II in');
+//    
+//   //console.log('finished processing user2');
+//});
+//
+//
+
+
+
+
+
+
+
+
+// connect to the database
+connection.connect();
+// if there's an error it would be seen from the SELECT below?
+/*
+maybe if the DB is not created it should create it on its own
+
+*/
+
+
+
+
+
+
+//dummy users
+
+time += 3 ;
+console.log("time=" + time);
+queue.push(5   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (data1, data2) {
+			
+	console.log('User a served. ' + queue.length() + ' remain');
+	//time-=queue.uTime;
+	
+
+
+	//console.log(err);
+	//console.log(data);
+	//console.log(data1);  // output TypeError: callback is not a function
+	//console.log(data2);  // undefined
+	//console.log(data.name);
+	//console.log(data.uTime);
+	
+
+
+	console.log("should take " + time + " minutes");
+
+	//console.log(queue.workersList()); // output: []
+	//console.log(queue.running()); // output: 0
+
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push({name: Count, uTime: time}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	//console.log('Serving user b');
+	console.log('User b served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push({name: Count, uTime: time}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+,  function (err) {
+	
+	//console.log('Serving user c');
+	console.log('User c served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push({name: Count, uTime: time}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	//console.log('Serving user d');
+	console.log('User d served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+time += 3 ;
+console.log("time=" + time);
+queue.push({name: Count, uTime: time}   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+, function (err) {
+	
+	//console.log('Serving user e');
+	console.log('User e served. ' + queue.length() + ' remain');
+	//time-=queue[0].uTime;
+	console.log("should take " + time + " minutes");
+	}
+)
+
+
+
+
+
+
+
+
+
+var userinfo;
+
+
+
+//initial selection of the latest user from the database
+//if this fails nothing else should happen - everything else needs this to finish
+connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,rows,fields){
+	if (err)
+		throw err
+
+
+	Count = rows[0].id;  // now we have the last saved value from the DB
+
+	//time = sum of all currently served users ??
+
+
+	Count++;  // number to be used for the upcoming user
+
+	console.log('upcoming user', Count);
+
+
+
+
+
+	// definitions of the "routes" for the RPI screen and the user pages
+	app.get('/', function(req, res){
+		res.sendFile('index.html');
+		//res.
+	});
+	app.get('/user', function(req, res){
+		res.sendFile(__dirname+'/user.html');
+	});
+ 
+
+
+
+
+
+
+	// 
+	io.on('connection', function(socket){
+
+		//
+		socket.on('request initial data', function(){
+			console.log('main page initialized');
+			//socket.emit('initial data', Count);
+			io.emit('initial data', IP + ':3000/user?id=' + Count);
+		});
+
+
+
+
+		//
+		socket.on('user scan attempted', function(){
+		// server has been "poked" by a visiting user ,
+
+			
+			socket.emit('user id',Count);
+			console.log('ID from socket', Count);
+
+
+
+			socket.on('products entered', function(prd){
+
+				console.log("number of products: " + prd);
+
+
+
+				// record the user into the database
+				connection.query('INSERT INTO USERS (`products`,`time`) VALUES ('+prd+', Now())'  
+				, function(err,rows,fields){
+					if (err)
+						throw err;
+					console.log('  successful insert');
+					}
+				)
+
+
+				// talk to the user page
+				socket.emit('user info', { queueL : queue.length(), queueTime : time} );
+
+
+				time += prd * 3 ; // increase overall waiting time according to the new user's product list
+				console.log("time=" + time);
+
+
+				// push the user to the queue
+				queue.push({name: Count}   // queue.length() - "a function returning the number of items waiting to be processed."
+				,  function (err) {
+					console.log('  user served, ' + queue.length() + ' remain.');
+					//time -= queue[0];
+					console.log("should take " + time + " minutes");
+					}
+				)
+
+
+
+				// talk to main page
+				Count++;	// maybe this should go up in the callback - here it would increment even if insert failed
+				io.emit('reset code', IP + ':3000/user?id=' + Count);    // this too
+
+
+
+				// log into main console
+				console.log(IP + ':3000/user?id=' + Count + ' will be the link for the next user');
+				console.log("currently waiting users : " + queue.length());
+
+			});
+
+
+
+		});
+
+	});
+
+
+
+
+
+	http.listen(3000, function(){
+		console.log('listening on *:3000');
+	});
+
+
+
+
+
+
+
+
+
+	}
+)
+
+
+
+
+
+
+
+
+//console.log();  //something apropriate 
+
+//connection.end();   // what if it remains commented?
+
+
+
+
+	
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+
+
+
+
+
+
+
+
+
+
+
+i think the system could accept incoming users quicker if the QR does not have to refresh and hide
+i think if it stays the same and never disappears users would just come and all IDs would be transfered merely by socket
+
+maybe, just mmaybe, the current form/implementation/way prevents overwhelming of the system
+
+but it makes it absolutely necessary for people to "scan" the QR exactly 1 by 1
+
+
+
+
+
+
+
+i think currently every user gets added into the database and only remembered by the queue methods while the server is running
+i suppose all the queue gets lost when i prematurely close/stop the server
+	but the users' entries remain in the database
+
+	is that ok ?
+
+
+
+
+
+
+
+
+				$('#btn').click(function() {
+
+					var prd = $('#input').val();
+
+					//hide input form
+					$("#input-group").detach();
+
+					//
+					var $newh5 = $( "<h5>You have been queued</h5>" );
+					$( "#col-sm-8" ).append( $newh5 );
+
+					//
+					var $newbtn = $( "<br> <button id='btn2' class='btn2 btn-outline-secondary' type='button'>Unqueue</button> <br><br>");
+					$("#col-sm-8").append($newbtn);
+
+
+
+
+					console.log(prd);
+
+					socket.emit('products entered',prd);
+
+
+
+
+				});
+				
+				$('#btn2').click(function() {
+					socket.emit();
+					// can the receiver know the exact URL of the sender ? // even if it does i shouldn't use it
+				});
+
+
+
+
+
+
+some minor fixes
+like variables  bla,
+db files from time to timestamp
+even more remain like "task"
+
+
+
+
+
+
+
+i feel like these
+
+				$('#btn2').click(function() {
+					socket.emit('unqueue', id_from_socket);
+					// can the receiver know the exact URL of the sender ? // even if it does i shouldn't use it
+				});
+
+
+				// receive user info
+				// only after we have received the user ID through socket and made the check
+				socket.on('user info', function({queueL,queueTime}){
+
+
+					$('#p1').text(greet1 + queueL);
+
+					$('#p2').text(greet2 + queueTime + " minutes");
+
+
+					console.log("users in current queue: " + queueL);
+					console.log("expected waiting time : " + queueTime + " minutes");
+				});
+
+left like that could possibly trigger unintended behaviour for very edge cases ha
+
+
+
+
+
+
+
+
+
+
+	// 
+	io.on('connection', function(socket){
+
+		//
+		socket.on('request initial data', function(){
+			//console.log('main page initialized');
+
+			io.emit('initial data', IP + ':3000/user?id=' + Count);
+		});
+
+
+
+
+		//
+		socket.on('user scan attempted', function(){
+		// server has been "poked" by a visiting user ,
+
+			
+			socket.emit('user id',Count);
+			console.log('queue attempt by ID', Count);
+
+
+
+			socket.on('products entered', function(prd){
+
+				console.log("number of products: " + prd);
+
+so
+should i nest the listening for the unqueueing socket in all these ?
+
+well
+you should be able to send delete command only after a connection
+	so for the 1st  	io.on('connection', function(socket){   - yes
+
+it's not you who request the initial data
+	so for the first 2nd  	socket.on('request initial data', function(){  - no
+
+should you have attempted to scan 
+maybe not because of behaviour/cases like  server restarting in the middle of serving users
+
+	so - second  2nd     socket.on('user scan attempted', function(){  - maybe not
+
+and , of course if you must attempt to scan , them you must enter products
+	
+	so 3rd    	socket.on('products entered', function(prd){  - same as 2nd
+
+
+
+
+
+
+
+
+man it's so cool you can zoom-in and zoom-out your code  and  collapse or expand sections
+awesome
+
+
+
+
+
+
+
+initial skeleton
+
+		socket.on('unqueue', function(id){
+		// server has received unqueue request
+		
+			unqueue id  /  set user[id].time = 0
+				// the problem here is i don't keep track of which time is whose - i just collect it all in one var - "time"
+
+			DELETE where 'id' from 'users' = id
+				// problem is  this info is not saved in the DB - which user needs what length of time
+		
+
+		});
+
+which way should i go - i think the second is better
+	because it would also enable processing of incomplete users between  server restarts
+
+	which would be cool ;p
+
+wait , what are the "Project Requirements"
+	is this "option" of ours heh here impied by them ?
+
+maybe i could ask my mentor
+	"should i pay attention to this?"
+
+	but this reminds me he was saying stuff like "users should have the option to delete themselves from the database"
+
+		isn't this a bad behaviour ?
+		shouldn't every successful attempt be recorded in some form ?
+
+
+
+
+
+
+going with the DB one
+
+so
+how do i prevent deletion of already processed users ?
+well, simply act only on "served? : no" users
+
+	so
+	add a "served" column of type bool  ?
+
+"served" possible options
+	yes
+	no
+
+"Status" possible options
+	served
+	serving
+	waiting
+	canceled
+
+serving  possible options/values
+	yes
+	no
+
+
+
+what each one implies
+	
+"served" yes
+	
+served" no
+	
+
+
+
+whatever ....
+i should go with the simplest first ;d ........
+
+yeah , but served , "no" could pose problems  (of course?)
+	
+	what exactly ?
+	
+	is "no" going to be a default option ?  i think yes
+		so , now as soon as you scan and enter products you get written in the DB
+		and then you would get a default  "served:"no  until you're finished/processed/served
+
+		but that implies the "unqueue" option would set that to "no" , maybe with an aditional column "time" of "0"
+			but then the SELECT statement would always select everyone previously canceled ;
+
+				well, in this case we should then really delete the entire record of the user
+
+
+i said "simplest"
+a "timeLentgh" column may be simpler 0 would just mean a canceled user
+yeah... but "products" of 0  would imply that too
+
+aha, but i need "time" for a specific user , so i can reduce the overall waiting time for everyone else
+well, you already record their/his/her number of products  and   currently the multiplier (3) is hardcoded , so what's the problem?
+
+
+
+
+
+
+
+
+
+
+okay i didin't think of this 
+	
+	should this also be directly dependent on the initial SELECT statement ?
+
+
+
+
+
+a thought
+before you even reach to the "unqueue" button you have to go through the page loading and sending to server and receiving back and sending the products and receiving the time and "unlocking" the button
+
+
+
+
+
+
+wait ;d
+"sending the products and receiving the time "
+they don't have to be in any particular order !
+you don't need to send your own time to the server first !!  - your own Waiting time does not depend on it  ! 
+:P
+
+
+
+
+
+oh that's so fucked up
+for a user to be actually able to delete themselves they must keep the page open/loaded at all times
+otherwise it gets discarded
+
+well, maybe , just maybe i could add something that checkes whether a currently not-served user is attempting to load the secondary page
+if he is , then maybe he should be pointed to some page/view that shows him the unqueue button and those "time remaining" thingies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+	<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+	<!-- ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	<title>queued</title>
+	
+
+
+
+	<script src="/socket.io/socket.io.js"></script>
+	<!--script src="https://code.jquery.com/jquery-1.11.1.js"></script-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+	<!-- Bootstrap files: -->
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+</head>
+	
+
+
+
+	
+<body>
+
+
+	
+	<script>
+	
+	$(function () {
+		
+		// decoding URL params
+		var getUrlParameter = function getUrlParameter(sParam) {
+			var sPageURL = window.location.search.substring(1),
+				sURLVariables = sPageURL.split('&'),
+				sParameterName,
+				i;
+			for (i = 0; i < sURLVariables.length; i++) {
+				sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+				}
+			};
+		};
+		// https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+		// should simplify this
+
+
+		var id_from_socket;
+
+		var id_from_url = getUrlParameter('id');		
+		
+		console.log("id from url = " + id_from_url);
+
+
+
+		var socket = io();
+		
+		var greet1 = "your order in the queue is " ;
+		var greet2 = "your turn will come after approximately " ;
+		var queue;
+
+		socket.emit('user scan attempted');	 // no need to "emit" back any special data besides a "poke" ?
+
+		
+
+		// get ID from socket too
+		socket.on('user id', function(param) {
+			id_from_socket = param;
+			console.log("id from socket = " + id_from_socket);
+
+			if (id_from_socket==undefined || id_from_url!=id_from_socket)
+				console.log("undefined or invalid ID");
+			else
+			{
+
+				console.log("ID is valid");
+				
+
+				// tell the server the check has been made and then wait for user's info
+//				socket.emit('user scan valid');
+
+				var $newinputgroup = $("<div id='input-group'>"+
+					"<input id='input' type='text' class='form-control' placeholder='How many products would you need?' aria-label='How many products would you need?' aria-describedby='basic-addon2' autofocus>"+
+					"<div class='input-group-append'>"+
+		  				"<button id='btn' class='btn btn-outline-secondary' type='button'>Submit</button>"+
+					"</div>"+
+				"</div>"
+				);
+
+				$( "#col-sm-8" ).append( $newinputgroup );
+
+
+				$('#btn').click(function() {
+
+					var prd = $('#input').val();
+
+					//hide input form
+					$("#input-group").detach();
+
+					//
+					var $newh5 = $( "<h5>You have been queued</h5>" );
+					$( "#col-sm-8" ).append( $newh5 );
+
+					//
+					var $newbtn = $( "<br> <button id='btn2' class='btn btn-outline-secondary' type='button'>Unqueue</button> <br><br>");
+					$("#col-sm-8").append($newbtn);
+
+
+					console.log(prd);
+
+					socket.emit('products entered', prd);
+
+
+
+					$('#btn2').click(function() {
+						socket.emit('unqueue', id_from_socket);
+						// can the receiver know the exact URL of the sender ? // even if it does i shouldn't use it
+
+						console.log ("requesting unqueue to the server...");
+					});
+					// should this be directly dependent on the receiving of "user info" ?
+					// this .click only works here
+					
+
+
+
+				});
+				
+
+
+
+
+				// receive user info
+				// only after we have received the user ID through socket and made the check
+				socket.on('user info', function({queueL,queueTime}){
+
+
+					$('#p1').text(greet1 + queueL);
+
+					$('#p2').text(greet2 + queueTime + " minutes");
+
+
+					console.log("users in current queue: " + queueL);
+					console.log("expected waiting time : " + queueTime + " minutes");
+					});
+
+
+
+
+			}
+
+
+		});
+
+
+
+
+
+		//$("#col-sm-8").detach();
+
+		
+		//if 
+
+		//else
+
+
+					
+		
+	});
+
+	</script>
+	
+
+
+
+
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Queuing System for the Fresh Counter</h1>
+  <p>Authors: Asif and Diman</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>    </h2>
+      <h5>Your status in the queue:</h5>
+      
+      <p id="p1">..</p>
+      <p id="p2">..</p>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+
+    <div id="col-sm-8" class="col-sm-8">
+      <h2>Welcome</h2>
+   
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>template by w3schools.com</p>
+  <p>Friday, 15 March 2019</p>
+</div>
+
+
+	
+	
+	
+	
+</body>
+</html>
+
+
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+
+
+
+
+this
+		
+			connection.query('SELECT * FROM users WHERE id='+id, function(err,rows,fields){
+
+				//DELETE where 'id' from 'users' = id
+				// problem is  this info is not saved in the DB - which user needs what length of time
+		
+				//time -= user[id] . products * 3
+
+				console.log(rows[0]);
+
+results in this
+
+RowDataPacket { id: 560, products: 3, timestamp: 2019-03-19T22:16:07.000Z }
+
+
+
+
+
+
+
+
+alrighty
+we can now unqueue anyone from the queue
+
+
+
+
+
+
+
+
+after user's time expires
+maybe i should send back to the userpage a message
+
+	should a future version support , with that, some "re-queue" option / button ?  that would just get by socket the new ID causing the qr to refresh like "remotely"
+		yeah..but that would be unfair if someone just now scanned that particular code hah
+
+		what if users start re-queueing themselves ?? - the QR would keep refreshing and no one at the place would be able to add himself/herself ;d
+
+
+
+
+
+maybe when time's up (the user is served) a message should be sent back to the user page for disabling the unqueue button
+or the page already knows when to do that ?
+
+	how do these things work while the page is not visible/open/active ??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\nodeprj3\13\node_modules\mysql\lib\protocol\Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+TypeError: Cannot read property 'products' of undefined
+    at Query.<anonymous> (C:\nodeprj3\13\app.js:333:21)
+    at Query.<anonymous> (C:\nodeprj3\13\node_modules\mysql\lib\Connection.js:502:10)
+    at Query._callback (C:\nodeprj3\13\node_modules\mysql\lib\Connection.js:468:16)
+    at Query.Sequence.end (C:\nodeprj3\13\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query._handleFinalResultPacket (C:\nodeprj3\13\node_modules\mysql\lib\protocol\sequences\Query.js:139:8)
+    at Query.EofPacket (C:\nodeprj3\13\node_modules\mysql\lib\protocol\sequences\Query.js:123:8)
+    at Protocol._parsePacket (C:\nodeprj3\13\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (C:\nodeprj3\13\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (C:\nodeprj3\13\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\nodeprj3\13\node_modules\mysql\lib\Connection.js:91:28)
+
+		why would i get this in a working app ?
+
+		i click "unqueue" button and i get this
+		wtf
+
+
+hm
+on a second , sloowwwwish delete
+
+	Serving user
+	  successful insert
+	  user served, 0 remain.
+	should take 0 minutes
+	All currently waiting users have been served. Counter is currently idle. Awaiting users...
+	RowDataPacket { id: 573, products: 6, timestamp: 2019-03-22T07:35:14.000Z }
+	-18
+	user deleted from DB
+
+no error
+
+
+also
+rows[0]=undefined
+interesting
+
+
+okayy
+i get like:
+	id=578
+	rows[0]=undefined
+and a record in the DB with ID 579
+
+i think some mess is hapening with those non-consecutive records and deleting new ones
+
+i think this "problem" will disappear if i just mark the user's status as "canceled" he
+
+that's not the way i like doing things but ....
+
+i have to pass the seminar in some reasonable time ...
+
+
+
+
+
+
+
+C:\nodeprj3\13\node_modules\mysql\lib\protocol\Parser.js:80
+        throw err; // Rethrow non-MySQL errors
+        ^
+
+Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', Now())' at line 1
+    at Query.Sequence._packetToError (C:\nodeprj3\13\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\nodeprj3\13\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (C:\nodeprj3\13\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (C:\nodeprj3\13\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (C:\nodeprj3\13\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\nodeprj3\13\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (C:\nodeprj3\13\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (C:\nodeprj3\13\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\nodeprj3\13\node_modules\mysql\lib\Connection.js:200:25)
+    at Socket.<anonymous> (C:\nodeprj3\13\app.js:277:16)
+    at Socket.emit (events.js:189:13)
+    at C:\nodeprj3\13\node_modules\socket.io\lib\socket.js:528:12
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+
+hah, whenever you don't enter number of products ;d
+
+
+
+
+
+
+okay
+i think i am indeed deleting the user from the DB and his time from the overall time
+but never from the actual "queue" object - how tf do i do that ? ;d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===============
+
+
+some new requirements by the "client"
+
+	- ....
+		well, i already do record the user immediately in the DB so.. :d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==================
+
+so
+
+is this the new milestone list ;p
+the "complete"  "new requirements by the "client""  ;p
+
+
+
+		feedback on every step 
+		with socket
+
+
+		another route for activating the next user
+		does not need a real page, just a url
+
+
+		another field in the db 
+		with status - waiting, serving, served
+		and possibly  canceled  for unqueued users 
+
+
+		number of products 
+		should be optional 
+
+
+		qr should refesh immediately when a user loads the page
+
+
+		tooltip on the unqueue button
+
+
+		the first incoming should be 1
+		and?
+		for him the number in the queue 
+		should not appear 
+
+
+		deploy on rpi
+
+
+		after 5min delay if the user is not served timeout him
+
+
+
+
+
+
+		////
+		oh
+		"select all users that are waiting and sort them by timestamp"
+		he said
+		///
+
+
+
+
+okay
+tooltip
+why the fuck would you need a tooltip on a touch button ?????
+
+	- done
+
+
+
+
+
+
+
+
+
+
+im afraid the assistant should be able to "release" the current user , maybe do some duty , and be able to , later, call the next waiting user
+
+but that seems to be out of the current requirements' scope 
+
+
+
+
+
+
+
+
+
+
+
+
+
+		another route for activating the next user
+		does not need a real page, just a url
+
+i think i just did this wow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+/*
+queuing system for the fresh counter
+
+
+*/
+
+
+// required packages/modules
+var express = require('express');
+var app = express();
+
+var http = 	require('http').Server(app);
+
+var io = require('socket.io')(http);
+
+var mysql = require('mysql');
+
+
+var async = require('async');
+
+
+
+
+
+
+var Count = 1;  //the number of the following user
+// what should the default value be ? (before even reading from the DB) 0 , 1 , undefined , 9999 or something else ?
+
+//var os = require( 'os' );
+//var IP = os.networkInterfaces()['Local Area Connection 3'][1]['address'];
+
+
+//var IP = "192.168.178.60";
+var IP = "localhost";
+
+
+	//var IP = "localhost";
+//console.log( "server's local address : " + IP );
+	//https://stackoverflow.com/questions/3653065/get-local-ip-address-in-node-js
+	//turns out there's no fully automatic way for this
+
+
+app.use(express.static(__dirname));
+
+
+// database connection definition
+var connection = mysql.createConnection({
+	host     : 'localhost',
+	user     : 'root',
+	password : 'root',
+	database : 'users'
+});
+
+var time = 0
+
+
+
+//sleep function definition
+function sleep() {
+	return new Promise(resolve => setTimeout(resolve, 20000));  // should this number be parametrised? // the entire function and its usage would become obsolete / in the real world there should be no need to simulate user processing/serving like this
+};
+
+//queue definition
+var queue = async.queue( async function (task,callback) {    // without "async" the "await sleep()" has no visible effect
+	
+	time -= task;
+	
+	console.log('Serving user');
+	//await sleep();
+	
+	// 
+	io.on('connection', function(socket){
+		console.log('calling next user');
+		callback();
+	});
+
+}, 1);   // 1 is the "concurency" argument for "queue" - "users" to be served one by one and not at the same time
+		// could be increased in a future version to support multiple 'fresh counters' or even multiple shops ( / pay desks ?)
+
+/*
+tracking of the queue will only happen while the server is running
+should it ?
+*/
+
+
+
+
+//
+//queue.drain = function() {
+//    console.log('All currently waiting users have been served. Counter is currently idle. Awaiting users...');
+//};
+
+
+//
+//// adding dummy users to the queue
+//++inqueue;
+//queue.push({name: 'a'}, function (err) {
+//    //console.log('I in');
+//    
+//    //console.log('finished processing user1');
+//});
+//++inqueue;
+//queue.push({name: 'b'}, function (err) {
+//    //console.log('II in');
+//    
+//   //console.log('finished processing user2');
+//});
+//
+//
+
+
+
+
+
+
+
+
+// connect to the database
+connection.connect();
+// if there's an error it would be seen from the SELECT below?
+/*
+maybe if the DB is not created it should create it on its own
+
+*/
+
+
+
+
+
+
+//dummy users
+
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//			
+//	console.log('User a served. ' + queue.length() + ' remain');
+//	//time-=queue.uTime;
+//	
+//
+//
+//	//console.log(err);
+//	//console.log(data);
+//	//console.log(data1);  // output TypeError: callback is not a function
+//	//console.log(data2);  // undefined
+//	//console.log(data.name);
+//	//console.log(data.uTime);
+//	
+//
+//
+//	console.log("should take " + time + " minutes");
+//
+//	//console.log(queue.workersList()); // output: []
+//	//console.log(queue.running()); // output: 0
+//
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//	
+//	//console.log('Serving user b');
+//	console.log('User b served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//,  function (err) {
+//	
+//	//console.log('Serving user c');
+//	console.log('User c served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//	
+//	//console.log('Serving user d');
+//	console.log('User d served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//	
+//	//console.log('Serving user e');
+//	console.log('User e served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+var userinfo;
+
+var dbresults;
+
+
+
+
+//connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,rows,fields){
+
+//connection.query("SELECT COUNT(*) AS queueLength FROM users WHERE status = 'waiting'", function(err, result){
+
+connection.query("SELECT * FROM users WHERE status='waiting' ORDER BY timestamp LIMIT 1", function(err,rows,fields){   // get the "oldest" waiting user
+// what should the app do initially ??
+// - make an initial check for a user ? - one that would be made in a similar way somewhere during runtime many times ?
+// - enter a loop of selecting the "oldest" waiting user ?
+// - wait for socket messages to do some of that ?
+	// should one of the 2 pages / 3 routes send a signal here to act ? , to start serving the next user
+
+		// how would that look like ?
+		// the assistant would press a buton to visit this /nextuser route 
+		// then he/she will get either
+			// the next user
+			//or a message "no currently waiting users"
+				// but here then later how would he/she receive a new incoming user ?? - automatically ? or just manually pushing that "next" button to visit/load/select  /nextuser 
+				 // maybe it should be all manual  (at least for now) - the assistant after all should be present at the place for anyone to be served
+
+				 		// the two possible options here
+				 		// - the assistant comes and just sees he has a user to serve (maybe with a list of all)
+				 		// - the assistant comes and presses "next"  ; although this implies him/her pressing that thing maybe too frequently
+
+
+// it should clean up all "waiting" users maybe
+// and then have at the ready a new ID
+
+// what should the app really do with "a selected" user ??
+// not much in this case without the async module queue objects
+// - just send it to assistant to press next for?
+
+
+
+	if (err)
+		throw err
+
+	//console.log(rows);
+
+	Count = rows[0].id;  // now we have the last saved value from the DB
+
+	//time = sum of all currently served users ??
+
+
+	Count++;  // number to be used for the upcoming user
+
+	//console.log('upcoming user', Count);
+
+
+
+
+
+	// definitions of the "routes" for the RPI screen and the user pages
+	app.get('/', function(req, res){
+		res.sendFile('index.html');
+		//res.
+	});
+	app.get('/user', function(req, res){
+		res.sendFile(__dirname+'/user.html');
+	});
+
+
+
+
+
+ 
+
+
+
+
+
+
+	// 
+	io.on('connection', function(socket){
+
+
+		app.get('/nextuser', function(req, res){
+			// okay, what would this /nextuser function exactly be for ?
+			  // for the "assisstant" behind the Counter to send a signal that the current user had been served  /  to call after those 5 minutes of timeout?
+
+
+			console.log('goodbye user');
+			res.send('next user called');
+
+			// the currently (waiting or) served user should be dismissed (like "served" or "canceled")
+				// how do I know which one is currently being served ?
+				// the  Count  variable ?
+			
+			// the "next" one should be selected
+				// what does "next" mean here?
+				// "selected" how ?
+					// with the same query   "SELECT * FROM users WHERE status='waiting' ORDER BY timestamp LIMIT 1"  ?
+
+						// does this mean my colleague was right about using loop ?
+						// should i have something like one looping SELECT statement that processes each "oldest"  "waiting" user directly from the DB ?
+
+							// how do you create loops in nodejs/express? - the way you would do in javascript? - how ?
+							  // does it make sense to use that ?
+
+
+			socket.emit('',function(){
+				// ? send a message for the user page to ... what?
+
+				// send a message to the main page to refresh the code ?
+					// uhm Nope!  ?
+
+				// 
+				// the app does not need to send messages to anyone 
+			});
+
+			//
+			// but first SELECT the user in "serving" status ?
+			// and make it "finished" ?
+
+			// exactly what happens when there's none?
+			// simply continue ?
+
+			
+			connection.query("UPDATE users SET status = 'finished' WHERE status='serving'", function(err,rows,fields){
+			// mark the currently served user as finished
+			// if there's no one to serve the app simply does nothing (no sql or js or node error/warning, no nothing)
+
+				if (err) throw err;
+
+				//console.log(rows);
+
+				// tell the current user he/she's finished
+				//
+
+			});			
+
+
+			//select the next waiting user
+			//connection.query("SELECT * FROM users WHERE status='waiting' ORDER BY timestamp LIMIT 1", function(err,rows,fields){   // get the "oldest" waiting user
+			connection.query("SELECT id, MIN(timestamp) AS servingUser FROM users WHERE status='waiting';", function(err,result){   // get the "oldest" waiting user's timestamp (we can jjust as well use ID)
+			// we have a bunch of "waiting" users in the DB,
+			// and we select the oldest one of them
+			
+			// and we update his/her status to "serving"
+
+				if (err) throw err;
+
+				//console.log(result[0].id);
+
+				dbresults = result[0].id;
+
+
+
+				connection.query("UPDATE users SET status = 'serving' WHERE id="+dbresults, function(err,rows,fields){
+					//connection.query("SHOW WARNINGS", function(err,rows,fields){   // no visible effect
+					//});
+
+					if (err) throw err;
+
+					console.log(result[0].id);
+
+				});
+
+
+
+			});
+
+
+			// broadcast? the ID next to serve
+			socket.emit('serving user', dbresults);
+			console.log(dbresults);
+
+
+		});
+
+
+
+
+
+
+
+		// Listening for Main page messages
+		//
+		socket.on('request initial data', function(){
+			//console.log('main page initialized');
+
+			io.emit('initial data', IP + ':3000/user?id=' + Count);
+		});
+
+
+
+
+		// Listening for User messages
+		//
+		socket.on('user scan attempted', function(){
+		// server has been "poked" by a visiting user ,
+			
+			socket.emit('user id',Count);
+			console.log('queue attempt by ID', Count);
+
+
+			socket.on('products entered', function(prd){
+
+				console.log("number of products: " + prd);
+
+
+
+				// record the user into the database
+				connection.query("INSERT INTO users (`products`,`timestamp`,`status`) VALUES (" + prd + ", Now(), 'waiting')"  
+				, function(err,rows,fields){
+					if (err)
+						throw err;
+					console.log('  successful insert');
+					}
+				)
+
+
+
+				connection.query("SELECT COUNT(*) AS queueLength FROM users WHERE status = 'waiting'", function(err, result){
+						// talk to the user page
+					//socket.emit('user info', { queueL : queue.length(), queueTime : time} );
+					console.log('count='+result[0].queueLength);
+					socket.emit('user info', { queueL : result[0].queueLength, queueTime : time} );
+
+				});
+
+
+
+			
+
+				time += prd * 3 ; // increase overall waiting time according to the new user's product list
+				console.log("time=" + time);
+
+
+		//		// push the user to the queue
+		//		queue.push( prd*3
+		//		,  function (err) {
+		//			console.log('  user served, ' + queue.length() + ' remain.');
+		//			
+		//			console.log("should take " + time + " minutes");
+		//			}
+		//		)
+
+
+
+
+
+				// talk to main page
+				Count++;	// maybe this should go up in the callback - here it would increment even if insert failed
+				io.emit('reset code', IP + ':3000/user?id=' + Count);    // this too
+
+
+
+				// log into main console
+				//console.log(IP + ':3000/user?id=' + Count + ' will be the link for the next user');	
+				//console.log("currently waiting users : " + queue.length());
+
+			});
+
+		});
+
+
+		socket.on('unqueue', function(id){
+		// server has received unqueue request
+		
+			connection.query('SELECT * FROM users WHERE id='+id, function(err,rows,fields){
+
+				//DELETE where 'id' from 'users' = id
+				// problem is  this info is not saved in the DB - which user needs what length of time
+		
+
+				console.log("id="+id);
+				console.log("rows[0]="+rows[0]);
+
+				time -= rows[0].products * 3;
+				console.log("rows[0].products="+rows[0].products )
+				connection.query('DELETE FROM users WHERE id='+id,function (err, rows, fields){
+					console.log("user deleted from DB"); 
+				});
+
+				console.log("time="+time);
+
+			});
+
+
+
+		});
+
+
+
+
+
+
+
+	});
+
+
+
+
+
+	http.listen(3000, function(){
+		//console.log('listening on *:3000');
+	});
+
+
+
+
+
+
+
+
+
+	}
+)
+
+
+
+
+
+
+
+
+//console.log();  //something apropriate 
+
+//connection.end();   // what if it remains commented?
+
+
+
+
+
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+in 10 minutes i found the reason for the problem that halt/prevented/stopped/slowed down  me yesterday for  some time i don't know how long
+
+i was just like
+- okay i know this worked on its own outside all these functions and statements
+- let's put it out of there on its own
+- let's then add one by one the statements before it , that control it , that it is nested in
+- not this one , works ok with this one , works ok with this one too , aha! - stops working with the SQL statement one !
+- is the SQL statement valid if i paste it in mysql workbench - yes it is
+- well, this the way .query method works - after successful completion/execution of the sql statement it should execute/invoke the callback function that's in its following argument , but seems to have problem with that
+- (i already knew the contents of my function work - the .emit method on the server side and the .on method on the client side indeed caused the desired behaviour - print a messages in the client's browser console)
+- so i probably miss something about how exactly .query has to work or be used
+- i have to see some documentation or something
+- okay, i use the initialization and the basic parts correctly
+- hm, quotes - right here i surround the entire statement with double quotes and for the literal data i use single ones
+- let's scroll and see if they use something different
+- hmm - they surround with single quotes  ,  they use double ones for the literal data  ,  and they use tildes for the table name
+- let's see what happens with those
+- let's try a couple variations in workbench - everything seems to work there if it doesn't have surrounding quotes (single ones)
+- makes sense - the code is not in some argument for some function/method inside a javascript app
+- let's see the whole thing in my code
+- and voila ! - the client received the message ! 
+
+
+- yeah , i tried a couple more things before that
+- i put an entire section of interdependent calls outside some others and commented out the actual socket thingy ...
+- didn't make much sense heh ;d
+
+
+
+
+
+i use results from similar statements : double surrounding quotes + single quotes for the literal data
+and they work
+why ?
+
+
+
+hm
+funny
+now i revert the code to how it was before "10minutes"
+and it works
+"wtf , there's no difference"
+the only one seems to be this time i did not reload the main page and the user page
+
+
+
+so
+
+aham
+indeed
+i restart the server , reload main page , reload user page , do stuff , and nothing appears on user's console
+restart server and do stuff - messages does appear on user side
+wtf ;d
+
+
+
+so
+
+seems that  when i reload the page it loses connection
+but only reestablishes it when i restart the app
+
+- what do i mean by restarting the app
+- well, it closes and supposedly stops everything
+- then modules and variables and functions blalbablab
+- hm , and this
+		io.on('connection', function(socket){
+		console.log('calling next user');
+		callback();
+		});
+- wait, is this a real problem , yes it is
+- so, whose fault is it - the client page or the server code ?
+- what if i restart the browser? - nothing
+- let's read a bit
+	https://stackoverflow.com/questions/49836254/how-to-avoid-new-socket-connection-on-browser-reload
+		"the websocket connection is closed automatically when the page is closed (refreshed)" hmm
+	https://en.wikipedia.org/wiki/Single-page_application
+		"new pages are capable of being generated without any interaction with a server" hm
+- well, then how do my own "connections" work ??  and why haven't I noticed other similar problems after these days of using these things ?
+
+- well, the main page:  i only load it once
+	- but still, it doesn't stop working after I reload it for example
+	- what do I mean "working"??
+	- well, it does generate the same QRcode, it does activate that "main page initialized" message
+	- but it sends it to the server
+	- it does receive the message with the code data , otherwise it doesn't generate the code
+
+- okay, the main page, to receive some initial data, sends a message to the server on load
+- should the user page do that too for something like "hey i'm here, i'm listening for changes in my state"
+	- but it already now does things like :
+	- it does send the server a signal on load
+	- it does wait for an id number from the server
+		- then it sends a products number to server
+		- and waits for a response
+		- possibly sends the server an unqueue signal
+	- and does wait for user info - two numbers
+
+- i don't even remember why this piece of code is where it is
+		socket.on('serving user', function(id_to_be_served){
+			console.log("someone's turn");
+			if (id_to_be_served==id_from_socket){
+				console.log("your turn");
+			}
+		});
+
+- i'm afraid i have refactor a large portion of the already fragmented app
+	- to account for the user page being able to receive multiple different types of events
+
+- does it get complicated ?
+- can't i just do something to show ??  and avoid working like "da Vinci" - both beautiful and precise
+
+
+
+
+
+
+- i want a simple thing , right ?
+- notify the user as soon as it's his turn
+
+- or should I fucking put the previous version of the app on the RPI for my mentor to project on their pretty fucking projector ??
+- 
+
+
+- i don't even know where i am now
+Passing the seminar and receiving a 4.0 as a base grade:
+A NodeJS server is running on startup of the Raspberry Pi
+	- i don't have that on the real rpi
+A Website, hosted by the NodeJS server, automatically opens in kiosk mode and shows the current QR code
+	- i don't have that on the real rpi
+Whenever a user scans the QR code a visual feedback is given and the QR code is hidden for a certain amount of time to indicate that the scan was successful.
+	- i do have this on my laptop
+Afterwards, a new QR code is generated and shown
+	- yes, too - i have the code on my laptop
+The NodeJS server adds the new user after scanning the QR code to the queuing database
+	- yes it does
+The user is redirected to a website, showing its current position in the queue after scanning the QR code
+	- it pretty much does
+
+
+- what if i open a new user page ?
+	- so it's like new pages don't connect
+- what if i rename "socket.emit('user scan attempted');	"  to  'user comes'
+	and  send him/her different signals based on whether he/she is a new  or  current user
+	?
+	- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+so
+
+26 03 2019
+11:06 am
+
+met Maximilian one more time
+
+we shall meet again on Monday 1st at 2pm
+
+indeed the final "presentation" is on 5th
+indeed in uni - in that same building , in the same room where the first presentation was/took place
+
+
+
+okay,
+now,
+to the software
+the socket thingy
+we moved 
+	socket.emit('serving user', dbresults);
+	console.log(dbresults);
+inside 
+	connection.query("UPDATE users SET status = 'serving' WHERE id="+dbresults, function(err,rows,fields){
+and also we renamed it to
+	io.emit....
+so now it does depend on the SQL statement (indeed i think the way it was before i start debugging it lol)
+and so now it indeed "broadcasts" to all "clients?"
+
+
+
+
+
+
+
+
+list of "todos" from today
+
+- "make the interface pretty" , "it will increase the chances of clients liking it" wow
+
+- "make it so that it just works when you start up the RPI"
+
+
+
+here's again the previous "todo"
+	
+
+		feedback on every step 
+		with socket
+
+
+		another route for activating the next user
+		does not need a real page, just a url
+
+
+		another field in the db 
+		with status - waiting, serving, served
+		and possibly  canceled  for unqueued users 
+
+
+		number of products 
+		should be optional 
+
+
+		qr should refesh immediately when a user loads the page
+
+
+		tooltip on the unqueue button
+
+
+		the first incoming should be 1
+		and?
+		for him the number in the queue 
+		should not appear 
+
+
+		deploy on rpi
+
+
+		after 5min delay if the user is not served timeout him
+
+
+
+
+
+
+
+i showed him the tooltips
+	not very impressed
+		understandably , but still, come on .... ;d
+
+showed him the SQL error on the RPI
+	told me to follow 10-something manual on the internet on resetting mySQL password
+
+
+
+asked him about
+	"
+	being able to enter products after you've been queued ?
+	isn't that unfair ?
+	"
+it seems okay to enable users to enter products at a later time after they have queued themselves , just add some maximum like "20 products"
+
+
+
+discussed this :
+	"
+	is there any specific reason why the QR has to refresh ?
+	"
+i'm not sure i understood what happened there;
+he agreed the system Can work with a single QRcode;
+said something about that a re-entering user would appear as a new one;
+i told him about my worries that a user can enter anything in that URL;
+told him that i do send the user's ID over socket and then compare the socket and the URL numbers and only allow the user to queue of they're identical;
+so, i'm not sure where we are on this , i think things just stay as they are - QR code , new one every time anyway
+
+
+
+told him about me having used that async module and its push functions and only having the queue active while the server is running
+
+
+
+he cringed once or twice
+smiled at least once
+mostly confused but not too much , 
+
+
+
+
+
+
+
+...
+well
+I Am the Backend guy
+I Am the Frontend guy
+I Am the Speaker
+I Am the middlewear guy
+I Am the admin guy
+!
+so ;d  at least i get to experience multiple facets of this ;d
+
+
+
+
+
+- also try the commands from the startup file one by one directly in the command line
+
+- try chromium-browser instead of chromium
+
+
+
+
+
+
+
+
+
+
+
+https://www.a2hosting.com/kb/developer-corner/mysql/reset-mysql-root-password
+did all this
+seemed ok
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+technically it's 00:18 on 03.04.19 now
+writing from RPi, connected to the Funai TV
+	works with it only because i uncommented 'hdmi_safe=1'
+raspbian image - the mid-sized one
+mysql is installed
+nodejs too
+npm too
+3 wifi connections with passwords are saved
+vnc is enabled
+ssh too - by opening the sd card on my smartphone and placing 'ssh' file in 'boot'
+
+my database/user combo seems to work now
+probably because of 'auth plugin' not being 'unix socket'
+even the password is left blank
+
+
+> cd /etc/xdg/lxsession/LXDE-pi/
+> sudo chown pi autostart
+edit autostart
+> sudo apt-get install unclutter
+edit app.js ....
+
+
+i cannot get this check to work
+	if (rows[0].id=='undefined')
+		{	
+			connection.query("INSERT INTO users (`products`,`timestamp`,`status`) VALUES (" + 1 + ", Now(), 'waiting')"  
+			, function(err,rows,fields){
+				if (err)
+					throw err;
+				console.log('successful initial insert');
+				}
+			)
+		}
+well, the SQL statement itself worked inside mysql
+let's assume i've done the Big Bang (insert user id 1)
+now launching the Universe (my app) works
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+
+
+
+
+
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Welcome to the Store</h1>
+  <p>please scan the QRcode with your smartphone</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item">
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+01:00 technically 04.april.19
+omg i fixed the processing of situation where there are no 'waiting' users
+
+
+
+
+
+
+
+
+
+
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::3000
+    at Object._errnoException (util.js:1022:11)
+    at _exceptionWithHostPort (util.js:1044:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1367:14)
+    at listenInCluster (net.js:1408:12)
+    at Server.listen (net.js:1492:7)
+    at Query.<anonymous> (/home/pi/Desktop/FreshCounterrr/14.1/app.js:547:7)
+    at Query.<anonymous> (/home/pi/Desktop/FreshCounterrr/14.1/node_modules/mysql/lib/Connection.js:502:10)
+    at Query._callback (/home/pi/Desktop/FreshCounterrr/14.1/node_modules/mysql/lib/Connection.js:468:16)
+    at Query.Sequence.end (/home/pi/Desktop/FreshCounterrr/14.1/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query._handleFinalResultPacket (/home/pi/Desktop/FreshCounterrr/14.1/node_modules/mysql/lib/protocol/sequences/Query.js:139:8)
+
+haha i get this when i try to start my app twice ;d
+
+
+
+
+
+
+
+okay
+also
+the user gets immediately written in the db, no waiting for his number of products
+but the following entering of products is not supported now ;d
+
+
+
+
+
+
+
+
+
+
+
+
+
+    html {
+     min-height: 100%;
+    }
+    body {
+      background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+     
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+13:31
+thursday 04.04.19
+okay
+the code and the main page look a notch prettier with a couple differenty colors ;p
+and the QRcode itself should now (hardcoded) fit in almost any resolution
+
+the today's meeting/appointment turned out to be for 12:00
+told him i thought it was at 14:00 and i can come as early as 13:45
+i'm not going until i get a response
+
+
+
+
+
+
+
+
+
+
+
+https://www.raspberrypi.org/forums/viewtopic.php?t=237069
+
+http://www.issihosts.com/haveged/
+
+http://www.irisa.fr/caps/projects/hipsor/
+
+http://www.irisa.fr/caps/projects/hipsor/misc.php#randdef
+
+wow
+
+> sudo apt-get install haveged
+> sudo systemctl enable haveged
+> sudo systemctl start haveged
+
+this actually solved the slow boot when no USB keyboard/mouse are plugged in ;d
+
+
+
+
+
+
+
+
+the entering of products have acted as a confirmation
+now as it is disabled on the server side i needed to add a separate message through socket
+	to inform the server that the user has confirmed he is legit ;p
+	
+
+okay
+only verified users can queue
+
+and fixed the issue that was braking the app when there are 0 waiting users ;d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pi@raspberrypi:~ $ traceroute google.com | head -n 2 | tail -1 | awk '{print $3}'
+(192.168.178.1)
+
+https://www.tldp.org/LDP/abs/html/string-manipulation.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var sys = require('sys')
+var exec = require('child_process').exec;
+
+
+
+dir = exec("ls -la", function(err, stdout, stderr) {
+  if (err) {
+    // should have err.code here?  
+  }
+  console.log(stdout);
+});
+
+dir.on('exit', function (code) {
+  // exit code is code
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo apt-get install dnsmasq hostapd
+
+
+systemctl unmask hostapd.service
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

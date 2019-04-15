@@ -1,41 +1,70 @@
 <!doctype html>
+
 <html lang="en">
+	
+	
 <head>
-    <meta charset="utf-8">
+	
+	<meta charset="utf-8">
 
 	<!-- ensure proper rendering and touch zooming -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>queued</title>
-	
-
 
 
 	<script src="/socket.io/socket.io.js"></script>
-	<!--script src="https://code.jquery.com/jquery-1.11.1.js"></script-->
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
+	<script src="/jquery-3.3.1.min.js"></script>
 
 	<!-- Bootstrap files: -->
-		<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="/bootstrap.min.css">
 	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="/popper.min.js"></script>
 	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="/bootstrap.min.js"></script>
 
 
 
-
-
+	<style>
+		<!-- Tooltip container -->
+		.tooltip {
+			position: relative;
+			display: inline-block;
+			border-bottom: 1px dotted black; <!-- If you want dots under the hoverable text -->
+		}
+		
+		<!-- Tooltip text -->
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 120px;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			padding: 5px 0;
+			border-radius: 6px;
+		
+		<!-- Position the tooltip text -->
+			position: absolute;
+			z-index: 1;
+		}
+		
+		<!-- Show the tooltip text when you mouse over the tooltip container -->
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+		}
+	</style>
 
 
 </head>
-	
+
+
+
+
+
+
+
 
 
 
@@ -46,7 +75,9 @@
 	
 	<script>
 	
-	$(function () {
+	$(function() {
+	
+		var queueLglobal, queueTimeglobal;
 		
 		// decoding URL params
 		var getUrlParameter = function getUrlParameter(sParam) {
@@ -62,9 +93,12 @@
 			};
 		};
 		// https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+		// should simplify this
+
+
 		var id_from_socket;
 
-		var id_from_url = getUrlParameter('id');		
+		var id_from_url = getUrlParameter('id');
 		
 		console.log("id from url = " + id_from_url);
 
@@ -72,8 +106,8 @@
 
 		var socket = io();
 		
-		var greet1 = "your order in the queue is " ;
-		var greet2 = "your turn will come after approximately " ;
+		var greet1 = "your order in the queue is ";
+		var greet2 = "your turn will come after approximately ";
 		var queue;
 
 		socket.emit('user scan attempted');	 // no need to "emit" back any special data besides a "poke" ?
@@ -89,154 +123,275 @@
 				console.log("undefined or invalid ID");
 			else
 			{
+				socket.emit('user confirmed');
 
 				console.log("ID is valid");
 				
-
-				// tell the server the check has been made and then wait for user's info
-//				socket.emit('user scan valid');
-
-				var $newinputgroup = $("<div id='input-group'>"+
-					"<input id='input' type='text' class='form-control' placeholder='How many products would you need?' aria-label='How many products would you need?' aria-describedby='basic-addon2'>"+
-					"<div class='input-group-append'>"+
-		  				"<button id='btn' class='btn btn-outline-secondary' type='button'>Submit</button>"+
-					"</div>"+
-				"</div>"
+				var $inputgroup = $(
+					"<div id='input-group'>"+
+						"<input id='input' type='text' class='form-control' placeholder='How many products would you need?' aria-label='How many products would you need?' aria-describedby='basic-addon2' autofocus>"+
+						"<div class='input-group-append'>"+
+							"<button id='submitProductsBtn' class='btn btn-outline-secondary mx-auto my-3' type='button' data-toggle='tooltip' title='optionally enter your desired number of products'>Submit</button>"+
+						"</div>"+
+					"</div>"
 				);
 
-				$( "#col-sm-8" ).append( $newinputgroup );
+				$( "#col-sm-8" ).append( $inputgroup );
+
+				
+				//
+				var $unqueuebtn = $( "<br> <button id='unqueuebtn' class='btn btn-outline-secondary' type='button' data-toggle='tooltip' title='remove yourself from the queue'>Unqueue</button> <br><br>");
+				$("#col-sm-8").append($unqueuebtn);
+
+				$('#unqueuebtn').click(function() {
+					socket.emit('unqueue', id_from_socket);
+					// can the receiver know the exact URL of the sender ? // even if it does i shouldn't use it
+
+					console.log ("requesting unqueue to the server...");
+
+					$("#unqueuebtn").detach();
+					$("#h5").detach();
+
+					$('#p1').text('you unqueued yourself');
+					$('#p2').text('scan a new QRcode to queue again');
+
+					$("#h2").detach();
+
+					//hide input form
+					$("#input-group").detach();
+					
+					$("#h2").detach();
+					$("#h2").detach();
+					
+
+					
+				});
+				// should this be directly dependent on the receiving of "user info" ?
+				// this .click only works here
 
 
-				$('#btn').click(function() {
 
-					var bla = $('#input').val();
+				$('#submitProductsBtn').click(function() {
+
+					var prd = $('#input').val();
 
 					//hide input form
 					$("#input-group").detach();
 
 					//
-					var $newh5 = $( "<h5>You have been queued</h5>" );
+					//var $newh5 = $( "<h5 id='h5' >You have been queued</h5>" );
+					var $newh5 = $( "<h5 id='h5' >Your products have been submitted</h5>" );
 					$( "#col-sm-8" ).append( $newh5 );
 
 
 
+					console.log(prd);
 
-					console.log(bla);
-
-					socket.emit('products entered',bla);
-
-
+					socket.emit('products entered', prd);
 
 
 				});
 				
+
 
 
 
 				// receive user info
 				// only after we have received the user ID through socket and made the check
 				socket.on('user info', function({queueL,queueTime}){
+				
+					queueLglobal = queueL;
+					queueTimeglobal = queueTime;
+
+					if (queueLglobal == 1) {
+						$('#p1').text("");
+						$('#p2').text("It is your turn now");
+					}
+					else {
+						$('#p1').text(greet1 + queueL);
+						$('#p2').text(greet2 + queueTime + " minutes");
+					}
 
 
-					$('#p1').text(greet1 + queueL);
-
-					$('#p2').text(greet2 + queueTime + " minutes");
-
-
-					console.log("users in current queue: " + queue);
-					console.log("expected waiting time : " + queue*3 + " minutes");
+					console.log("users in current queue: " + queueL);
+					console.log("expected waiting time : " + queueTime + " minutes");
+				
 				});
 
 
+
+
+			
 			}
+
+
+
 		});
 
 
 
 
 
-		//$("#col-sm-8").detach();
+		//
+		socket.on('serving user', function(id_to_be_served){
+			
+			
+			--queueLglobal;
+			//queueTimeglobal -= ?;  //not implemented yet
+			
+			console.log(queueTimeglobal);
+			console.log(typeof queueTimeglobal);
+			queueTimeglobal -= 3;  //not implemented yet
+			console.log(queueTimeglobal);
+			console.log(typeof queueTimeglobal);
+			
+			
+			if (id_to_be_served==id_from_socket){   // at this moment queueL should be 0
+				console.log("your turn");
+			} else
+				console.log("someone's turn");
+			
+			console.log("queueLglobal = " + queueLglobal);
+			console.log("queueTimeglobal = " + queueTimeglobal);
+				
 
+			if (queueLglobal > 1) {
+				$('#p1').text(greet1 + queueLglobal);
+				$('#p2').text(greet2 + queueTimeglobal + " minutes");
+			}
+			else if (queueLglobal == 1) {
+				$('#p1').text("You are next");
+				$('#p2').text("Your turn is coming right after the customer being served now");
+			}
+			else if (queueLglobal == 0) {
+				$('#p1').text("You are being served...");
+				$('#p2').text(" ");
+				
+				$("#input-group").detach();
+				$("#col-sm-8").detach();
+
+			}
+			else if (queueLglobal == -1) {  // user finished
+				$('#h5').text(" ");
+				
+				$('#p1').text("Thank you for your purchase, have a nice day.");
+			}
+			else {
+				$('#p1').text("");
+				$('#p2').text("");
+				
+				console.log("ERROR , invalid queueL");
+				console.log("either a negative number was received or a non-numerical character : " + queueLglobal);
+			}
+
+	
+		});
 		
-		//if 
-
-		//else
-
-
-					
 		
+		
+		// somebody has unqueued
+		socket.on('unqueue', function(unqueued_id){
+			console.log('someone unqueued themselves');
+			
+			if(unqueued_id < id_from_socket)
+			{
+				--queueLglobal;
+				queueTimeglobal-=3;
+				
+				console.log('new order: ' + queueLglobal);
+				console.log('new waiting time: ' + queueTimeglobal);
+				
+				if (queueLglobal > 1) {
+					$('#p1').text(greet1 + queueLglobal);
+					$('#p2').text(greet2 + queueTimeglobal + " minutes");
+				}
+				else if (queueLglobal == 1) {
+					$('#p1').text("You are next");
+					$('#p2').text("Your turn is coming right after the customer being served now");
+				}
+	
+			} else
+				console.log('someone else');
+			
+		});
+
+
+
+	
+	
 	});
+
 	</script>
 	
 
 
 
+	
+	<div class="jumbotron text-center" style="margin-bottom:0">
+		<h1>Queuing System for the Fresh Counter</h1>
+		<p>Authors: Asif and Diman</p>
+	</div>
+	
+	
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<a class="navbar-brand" href="#">Products</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Add cheese</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Add meat</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Add something else</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>Queuing System for the Fresh Counter</h1>
-  <p>Authors: Asif and Diman</p> 
-</div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>    
-    </ul>
-  </div>  
-</nav>
-
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-      <h2>    </h2>
-      <h5>Your status in the queue:</h5>
-      
-      <p id="p1">..</p>
-      <p id="p2">..</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-        </li>
-        <li class="nav-item">
-        </li>
-        <li class="nav-item">
-        </li>
-        <li class="nav-item">
-        </li>
-      </ul>
-      <hr class="d-sm-none">
-    </div>
-
-    <div id="col-sm-8" class="col-sm-8">
-      <h2>Welcome</h2>
-   
-      <br>
-    </div>
-  </div>
-</div>
-
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <p>template by w3schools.com</p>
-  <p>Friday, 15 March 2019</p>
-</div>
+	<div class="container" style="margin-top:30px">
+		<div class="row">
+			<div class="col-sm-4">
+				<h2>    </h2>
+				<h5 id='h5'>Your status in the queue:</h5>
+				
+				<p id="p1">..</p>
+				<p id="p2">..</p>
+				<ul class="nav nav-pills flex-column">
+					<li class="nav-item">
+					</li>
+					<li class="nav-item">
+					</li>
+					<li class="nav-item">
+					</li>
+					<li class="nav-item">
+					</li>
+				</ul>
+				<hr class="d-sm-none">
+			</div>
+	
+			<div id="col-sm-8" class="col-sm-8">
+				<h2 id='h2'>Welcome</h2>
+				<br>
+			</div>
+		</div>
+	</div>
 
 
+	<div class="jumbotron text-center" style="margin-bottom:0">
+		<p>template by w3schools.com</p>
+		<p>Friday, 11 April 2019</p>
+	</div>
 	
 	
 	
 	
 </body>
-</html>
 
+
+</html>

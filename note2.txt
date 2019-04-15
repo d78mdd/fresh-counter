@@ -1,0 +1,628 @@
+note2
+
+as a start scrap some code / logic and comments here
+like the auto IP thingies
+extensive comments about the initial state
+the dummy users and some logic for the queue object
+and as well the entire logic the queue object
+
+
+
+
+
+
+
+//connection.query('SELECT * FROM users ORDER BY id DESC LIMIT 1', function(err,rows,fields){
+
+//connection.query("SELECT COUNT(*) AS queueLength FROM users WHERE status = 'waiting'", function(err, result){
+
+connection.query("SELECT * FROM users WHERE status='waiting' ORDER BY timestamp LIMIT 1", function(err,rows,fields){   // get the "oldest" waiting user
+// what should the app do initially ??
+// - make an initial check for a user ? - one that would be made in a similar way somewhere during runtime many times ?
+// - enter a loop of selecting the "oldest" waiting user ?
+// - wait for socket messages to do some of that ?
+	// should one of the 2 pages / 3 routes send a signal here to act ? , to start serving the next user
+
+		// how would that look like ?
+		// the assistant would press a button to visit this /nextuser route 
+		// then he/she will get either
+			// the next user
+			//or a message "no currently waiting users"
+				// but here then later how would he/she receive a new incoming user ?? - automatically ? or just manually pushing that "next" button to visit/load/select  /nextuser 
+				 // maybe it should be all manual  (at least for now) - the assistant after all should be present at the place for anyone to be served
+
+				 		// the two possible options here
+				 		// - the assistant comes and just sees he has a user to serve (maybe with a list of all)
+				 		// - the assistant comes and presses "next"  ; although this implies him/her pressing that thing maybe too frequently
+
+
+// it should clean up all "waiting" users maybe
+// and then have at the ready a new ID
+
+// what should the app really do with "a selected" user ??
+// not much in this case without the async module queue objects
+// - just send it to assistant to press next for?
+
+
+
+
+
+
+
+
+
+
+//var result = require('child_process').execSync("traceroute google.com | head -n 2 | tail -1 | awk '{print $3}'").toString().trim();
+
+//var len = result.length;
+//var result1 = result.substr(1, len);
+
+//len = result1.length;
+//var result2 = result1.substr(0, len-1);
+
+
+//console.log("IP="+result2);
+
+
+
+
+
+
+
+
+
+
+
+//var os = require( 'os' );
+//var IP = os.networkInterfaces()['Local Area Connection 3'][1]['address'];
+
+
+var IP = "192.168.4.1";
+//var IP = "localhost";
+
+
+//var IP = result2;
+
+
+	//var IP = "localhost";
+//console.log( "server's local address : " + IP );
+	//https://stackoverflow.com/questions/3653065/get-local-ip-address-in-node-js
+	//turns out there's no fully automatic way for this
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+tracking of the queue will only happen while the server is running
+should it ?
+*/
+
+
+
+//
+//queue.drain = function() {
+//    console.log('All currently waiting users have been served. Counter is currently idle. Awaiting users...');
+//};
+
+
+//
+//// adding dummy users to the queue
+//++inqueue;
+//queue.push({name: 'a'}, function (err) {
+//    //console.log('I in');
+//    
+//    //console.log('finished processing user1');
+//});
+//++inqueue;
+//queue.push({name: 'b'}, function (err) {
+//    //console.log('II in');
+//    
+//   //console.log('finished processing user2');
+//});
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+// connect to the database
+connection.connect();
+// if there's an error it would be seen from the SELECT below?
+/*
+maybe if the DB is not created it should create it on its own
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//dummy users
+
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//			
+//	console.log('User a served. ' + queue.length() + ' remain');
+//	//time-=queue.uTime;
+//	
+//
+//
+//	//console.log(err);
+//	//console.log(data);
+//	//console.log(data1);  // output TypeError: callback is not a function
+//	//console.log(data2);  // undefined
+//	//console.log(data.name);
+//	//console.log(data.uTime);
+//	
+//
+//
+//	console.log("should take " + time + " minutes");
+//
+//	//console.log(queue.workersList()); // output: []
+//	//console.log(queue.running()); // output: 0
+//
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//	
+//	//console.log('Serving user b');
+//	console.log('User b served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//,  function (err) {
+//	
+//	//console.log('Serving user c');
+//	console.log('User c served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//	
+//	//console.log('Serving user d');
+//	console.log('User d served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//time += 3 ;
+//console.log("time=" + time);
+//queue.push(3   // queue.length() - "a function returning the number of items waiting to be processed."   // but i seem to break it somehow
+//, function (err) {
+//	
+//	//console.log('Serving user e');
+//	console.log('User e served. ' + queue.length() + ' remain');
+//	//time-=queue[0].uTime;
+//	console.log("should take " + time + " minutes");
+//	}
+//)
+//
+//
+//
+
+
+
+
+
+
+
+var async = require('async');
+
+
+
+
+
+
+
+
+
+//sleep function definition
+function sleep() {
+	return new Promise(resolve => setTimeout(resolve, 20000));  // should this number be parametrised? // the entire function and its usage would become obsolete / in the real world there should be no need to simulate user processing/serving like this
+};
+
+//queue definition
+var queue = async.queue( async function (task,callback) {    // without "async" the "await sleep()" has no visible effect
+	
+	time -= task;
+	
+	console.log('Serving user');
+	//await sleep();
+	
+	// 
+	io.on('connection', function(socket){
+		console.log('calling next user');
+		callback();
+	});
+
+}, 1);   // 1 is the "concurency" argument for "queue" - "users" to be served one by one and not at the same time
+		// could be increased in a future version to support multiple 'fresh counters' or even multiple shops ( / pay desks ?)
+
+
+
+
+
+
+
+
+
+
+
+		//		// push the user to the queue
+		//		queue.push( prd*3
+		//		,  function (err) {
+		//			console.log('  user served, ' + queue.length() + ' remain.');
+		//			
+		//			console.log("should take " + time + " minutes");
+		//			}
+		//		)
+
+
+
+
+
+
+
+
+
+
+
+15:00 (9/4/19)
+1h cleaning up    (code :D)
+
+i also earlier saw how to adjust system time, 'cause the RPI thought it's 5 days earlier lol
+
+
+
+
+19:25
+fixed CSS sections comments , indentation in all 3 files, intentation type and size - tabs only, equal to 4 spaces
+
+more importantly  fixed the waiting users issue where you would get the id of already waiting user instead of a new one
+
+and  now user's page updates the order in the queue every time someone gets served
+	and thus also tells when it's your turn and when you are actually served :p
+
+
+20:00
+button Submit looks a bit better
+
+
+
+
+
+
+
+
+
+
+
+
+
+11 april 19
+12:40
+
+
+				// tell the server the check has been made and then wait for user's info
+				//socket.emit('user scan valid');
+
+hah , i seem to have written the same thing in 
+				socket.emit('user confirmed');
+
+
+
+
+
+
+
+
+		socket.on('serving user', function(id_to_be_served){
+		// should be io.on? since it's expected this to be message from a broadcast to every user
+
+but things seem to work without the thng in the comment ;d
+
+
+
+
+
+
+
+
+
+
+		//$("#col-sm-8").detach();
+
+		
+		//if 
+
+		//else
+
+
+a leftover skeleton logic that's now pretty much implemented
+cool ;d
+
+
+
+
+
+
+
+
+
+
+	<div class="tooltip">Hover over me
+		<span class="tooltiptext">Tooltip text</span>
+	</div>
+	
+
+a leftover from playing with tooltips
+
+
+
+
+
+
+
+
+
+
+make use of that nav thing
+just a skeleton
+
+...for what ?? ;d - for the separate (types of) products
+
+
+
+
+
+
+
+
+
+		.fakeimg {
+			height: 200px;
+			background: #aaa;
+		}
+
+some leftover from css / styles / templates copy-paste ;d
+
+
+
+
+
+
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				</li>
+				<li class="nav-item">
+				</li>
+				<li class="nav-item">
+				</li>
+			</ul>
+
+( another leftover , part of a template , was inside the inner div :
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		</div>
+	</nav>
+)
+
+
+
+
+
+
+
+			//qrcode = new QRCode(document.getElementById("qrcode"), data+'');    // QRCode does not work with a pure number as a 2nd argument
+			qrcode = new QRCode(document.getElementById("qrcode"), {
+
+but things work fine indeed with the second / uncommented line lol
+
+but the same content is now present in the settings struct of the QR object
+so , idk
+
+
+
+
+
+
+
+
+
+again
+two ways of the same thing, the detailed one is the needed one
+				//qrcode = new QRCode(document.getElementById("qrcode"), link);
+				qrcode = new QRCode(document.getElementById("qrcode"), {
+					text: link,
+					width: 200,
+					height: 200,
+					colorDark : "#263238",
+					colorLight : "#CFD8DC",
+					correctLevel : QRCode.CorrectLevel.H
+				});
+
+
+
+
+
+
+
+
+
+
+
+- i'd like to make something show during those 5 seconds before the new QR is shown
+
+- notify everyone when a user unqueues
+
+- implement some simple products entering ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17:54
+			socket.emit('',function(){
+				// ? send a message for the user page to ... what?
+
+				// send a message to the main page to refresh the code ?
+					// uhm Nope!  ?
+
+				// 
+				// the app does not need to send messages to anyone 
+			});
+
+another piece of logic that's now implemented in another code part
+
+in an io.emit to all users when someone is being served
+
+
+
+
+
+
+
+
+
+
+			//
+			// but first SELECT the user in "serving" status ?
+			// and make it "finished" ?
+
+			// exactly what happens when there's none?
+			// simply continue ?
+
+yes, to both ;p
+i've implemented that
+
+
+
+
+
+
+
+
+
+					//connection.query("SHOW WARNINGS", function(err,rows,fields){   // no visible effect
+					//});
+
+some experiment to debug things..
+
+
+
+
+
+
+
+
+					//socket.emit('user info', { queueL : queue.length(), queueTime : time} );
+
+i don't use the async queue object anymore
+
+
+
+
+
+
+
+				//DELETE where 'id' from 'users' = id
+				// problem is  this info is not saved in the DB - which user needs what length of time
+		
+
+what's the thing here ?
+the DELETE is a now implemented logic
+and every user's products count is recorded in the DB, thus their time can be known (assuming every products takes the same amount of time )
+
+
+
+
+
+
+
+
+'moved' the unqueue button to appear earlier
+
+
+
+
+
+
+
+19:56
+users' order in the queue changes when someone unqueues and they see that
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('MyNewPass');
+FLUSH PRIVILEGES;
+
+
+MariaDB [(none)]> CREATE USER IF NOT EXISTS foo2@test IDENTIFIED BY 'password';
+
+
+MariaDB [(none)]> CREATE USER boy@localhost IDENTIFIED VIA mysql_native_password;
+
+
+
+
+CREATE USER boy@localhost IDENTIFIED VIA mysql_native_password;
+
+grant all privileges on *.* to 'boy'@'localhost';
+
+
+
